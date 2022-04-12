@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/categories/index",
+    "pages/information/index",
+    "pages/message/index",
+    "pages/my/index"
+  ],
+  
+  "tabBar": {
+    "custom": true,
+		"color": "#000000",
+		"selectedColor": "#000000",
+		"backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/categories/index"
+      },
+      {
+        "pagePath": "pages/information/index"
+      },
+      {
+        "pagePath": "pages/message/index"
+      },
+      {
+        "pagePath": "pages/my/index"
+      }
+    ]
+  },
+
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "闲置土地信息共享",
+    "navigationBarTextStyle": "black"
+  },
+
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index"
+  }
+}

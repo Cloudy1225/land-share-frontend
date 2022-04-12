@@ -1,0 +1,4 @@
+<!--index.wxml-->
+
+
+<van-button type="info">test</van-button>
