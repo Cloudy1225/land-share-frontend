@@ -1,5 +1,5 @@
 // index.js
- const app = getApp()
+// const app = getApp()
 // const { envList } = require('../../envList.js');
 
 Page({

@@ -1,48 +1,39 @@
-// components/custom-tab-bar/index.js
-// 自定义组件底部导航栏
+// custom-tab-bar/indext.js
 Component({
     /**
      * 组件的属性列表
      */
-    // properties: {
+    properties: {
 
-    // },
+    },
 
     /**
      * 组件的初始数据
      */
     data: {
-        active: 0, // 是否被选择中
+        current: '/pages/index/index', // 是否被选择中
         list: [
             {
-                icon: 'wap-home',
+                icon: 'md-home',
                 text: '首页',
-                url: '/pages/index/index'
+                key: '/pages/index/index'
             },
             {
-                icon: 'bars',
-                text: '分类',
-                url: '/pages/categories/index'
+                icon: 'ios-list-box',
+                text: '土地',
+                key: '/pages/land/index'
             },
             {
-                icon: 'info',
+                icon: 'ios-information-circle',
                 text: '资讯',
-                url: '/pages/information/index',
-                info: '99+'
+                key: '/pages/information/index',
             },
             {
-                icon: 'chat',
-                text: '消息',
-                url: '/pages/message/index',
-                info: '99+'
-            },
-            {
-                icon: 'manager',
+                icon: 'ios-person',
                 text: '我的',
-                url: '/pages/my/index'
+                key: '/pages/my/index'
             }
         ]
-
     },
 
     /**
@@ -50,17 +41,16 @@ Component({
      */
     methods: {
         onChange(event) {
-			this.setData({ active: event.detail });
 			wx.switchTab({
-				url: this.data.list[event.detail].url
-			});
+                url: event.detail.key
+            });
 		},
 
 		init() {
-			const page = getCurrentPages().pop();
+            const page = getCurrentPages().pop();
 			this.setData({
-				active: this.data.list.findIndex(item => item.url === `/${page.route}`)
-			});
+                current: '/'+page.route //当前页面路径
+            });
 		}
     }
 })

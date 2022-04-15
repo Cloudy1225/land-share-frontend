@@ -6,7 +6,35 @@
 
 ## 注意
 
-### 关于 git
+### 关于WuxUI
+
+我们使用的前端框架为[Wux UI](https://www.wuxui.com/#/introduce)，写代码时建议
+
+- 在微信搜这个小程序预览
+- 浏览器阅读文档https://www.wuxui.com/#/introduce
+- 用微信开发者工具导入文件 **wux-ui-example**，（这个文件我会发群里）
+
+**Attention**:
+
+在 app.json 引入组件使用
+
+```json
+"usingComponents": {
+    "wux-button": "wuxui-lib/button/index"
+ }
+```
+
+在 page.json 引入组件使用
+
+```json
+"usingComponents": {
+    "wux-button": "../../wuxui-lib/button/index"
+}
+```
+
+
+
+### 关于git
 
 - clone 到本地的master分支请不要修改，再本地创建自己的分支，名称为第一个首字母，如：
 
@@ -29,4 +57,6 @@ git checkout lyh # 切换新分支为当前分支
 
 ### 关于调试
 
-面向百度调试就不说了，有解决不掉的在群里问一下，或许群友就踩过同样的坑，我们追求效率与质量
+学会用console.log()调试，但调试后请注释掉
+
+面向百度调试就不说了，有解决不掉的在群里问一下，或许群友就踩过同样的坑，我们追求效率与质量。

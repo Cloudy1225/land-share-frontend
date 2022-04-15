@@ -1,8 +1,8 @@
-<!--components/custom-tab-bar/index.wxml-->
-<van-tabbar active="{{ active }}" 
-  inactive-color="#000" bind:change="onChange">
-  <van-tabbar-item wx:for="{{ list }}" wx:key="index" icon="{{ item.icon }}" info="{{ item.info }}">{{
-    item.text
-  }}</van-tabbar-item>
-</van-tabbar>
+<!--custom-tab-bar/indext.wxml-->
 
+<wux-tabbar controlled current="{{ current }}" theme="positive" bind:change="onChange">
+  <wux-tabbar-item wx:for="{{ list }}" wx:key="index" key="{{ item.key }}" title="{{ item.text }} ">
+    <wux-icon wux-class="icon" type="{{ item.icon }}" size="22" slot="icon-on" />
+    <wux-icon wux-class="icon" type="{{ item.icon }}" size="22" slot="icon-off" />
+  </wux-tabbar-item>
+</wux-tabbar>

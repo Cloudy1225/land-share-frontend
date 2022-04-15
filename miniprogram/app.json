@@ -1,9 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/categories/index",
+    "pages/land/index",
     "pages/information/index",
-    "pages/message/index",
     "pages/my/index"
   ],
   
@@ -17,20 +16,16 @@
         "pagePath": "pages/index/index"
       },
       {
-        "pagePath": "pages/categories/index"
+        "pagePath": "pages/land/index"
       },
       {
         "pagePath": "pages/information/index"
-      },
-      {
-        "pagePath": "pages/message/index"
       },
       {
         "pagePath": "pages/my/index"
       }
     ]
   },
-
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
@@ -38,9 +33,9 @@
     "navigationBarTitleText": "闲置土地信息共享",
     "navigationBarTextStyle": "black"
   },
-
   "sitemapLocation": "sitemap.json",
+  "style": "v2",
   "usingComponents": {
-    "van-button": "@vant/weapp/button/index"
+    "wux-button": "wuxui-lib/button/index"
   }
 }

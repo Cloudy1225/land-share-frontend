@@ -1,7 +1,9 @@
 {
     "component": true,
     "usingComponents": {
-        "van-tabbar": "/miniprogram_npm/@vant/weapp/tabbar/index",
-        "van-tabbar-item": "/miniprogram_npm/@vant/weapp/tabbar-item/index"
-        }
+        "wux-icon": "../wuxui-lib/icon/index",
+        "wux-badge": "../wuxui-lib/badge/index",
+        "wux-tabbar": "../wuxui-lib/tabbar/index",
+        "wux-tabbar-item": "../wuxui-lib/tabbar-item/index"
+    }
 }
