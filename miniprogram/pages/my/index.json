@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "我的",
+  "usingComponents": {
+    "wux-avatar": "../../wuxui-lib/avatar/index"
+  }
 }

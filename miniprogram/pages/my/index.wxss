@@ -1,1 +1,8 @@
 /* pages/my/index.wxss */
+@import '../../wuxui-lib/styles/index.wxss';
+
+.image {
+    width: 100% !important;
+    height: auto !important;
+    padding-bottom: 100% !important;
+}

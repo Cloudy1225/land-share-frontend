@@ -36,6 +36,9 @@
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "usingComponents": {
-    "wux-button": "wuxui-lib/button/index"
+    "wux-button": "wuxui-lib/button/index",
+    "wux-row": "wuxui-lib/row/index",
+    "wux-col": "wuxui-lib/col/index",
+    "wux-image": "wuxui-lib/image/index"
   }
 }

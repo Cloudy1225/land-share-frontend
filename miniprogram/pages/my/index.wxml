@@ -1,2 +1,31 @@
 <!--pages/my/index.wxml-->
 
+<view class="my">
+    <view class="login">
+        <wux-row>
+            <wux-col span="3">
+                <wux-image wux-class="image" shape="circle" src=
+                "{{ userInfo.length!=0?userInfo.avatarUrl:defaultAvatar }}">
+                </wux-image>
+            </wux-col>
+            <wux-col span="3" wx:if="{{!hasUserInfo}}">
+                <wux-button block type="positive" bind:click="login">
+                    点击登录
+                </wux-button>
+            </wux-col>
+            <wux-col span="3" wx:else>
+                {{ userInfo.nickName }}
+            </wux-col>
+            <wux-col span="3">
+                <wux-button block type="positive" bind:click="register">
+                    test1
+                </wux-button>
+            </wux-col>
+            <wux-col span="3">
+                <wux-button block type="positive" bind:click="inc">
+                    test2
+                </wux-button>
+            </wux-col>
+         </wux-row>
+    </view>
+</view>

@@ -10,6 +10,7 @@
     hover-stay-time="{{ hoverStayTime }}"
     lang="{{ lang }}"
     bindgetuserinfo="bindgetuserinfo"
+    bindgetuserprofile="bindgetuserprofile"
     session-from="{{ sessionFrom }}"
     send-message-title="{{ sendMessageTitle }}"
     send-message-path="{{ sendMessagePath }}"
