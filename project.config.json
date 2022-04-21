@@ -41,7 +41,7 @@
     },
     "appid": "wxda77377c3638f7ec",
     "projectname": "land-share-frontend-test",
-    "libVersion": "2.14.1",
+    "libVersion": "2.23.4",
     "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
     "condition": {
         "search": {

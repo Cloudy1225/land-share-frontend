@@ -1,4 +1,5 @@
 // pages/my/index.js
+const app = getApp();
 Page({
 
     /**
@@ -6,13 +7,11 @@ Page({
      */
     data: {
         userInfo: [],
-        defaultAvatar: "../../images/unloginAvatar.png",
         hasUserInfo: false
     },
 
     // 点击登录函数
     login() {
-      this.register(); 
       wx.getUserProfile({
         desc: '获取你的头像和昵称:)',
         success: (res) => {
@@ -20,49 +19,81 @@ Page({
           this.setData({ // 设置用户信息：头像、昵称、性别等
             userInfo: res.userInfo,
             hasUserInfo: true
+          });
+
+          // 看是否为新用户，如果是则自动注册，返回值为role
+          const res1 =  this.register(); 
+          res1.then((fulfilledData) => {
+            // console.log(fulfilledData)
+            app.globalData.role = fulfilledData; // role变为1或2
+
+            wx.setStorage({ // 保存用户信息至本地缓存
+              key:'userInfo',
+              data:{
+                nickName: res.userInfo.nickName,
+                avatarUrl: res.userInfo.avatarUrl,
+                role: fulfilledData
+              },
+              success(res){
+                console.log("缓存成功",res)
+              }
+            })
           })
         }
       })
     },
     
-    // 看是否为新用户，如果是则自动注册
-    register(){
-      const res =  wx.cloud.callContainer({
-        config: {
-          env: 'prod-9grx0olg9c8cf232', // 微信云托管的环境ID
-        },
-        path: '/my/loginOrRegister', // 填入业务自定义路径和参数
-        method: 'GET', // 按照自己的业务开发，选择对应的方法
-        header: {
-          'X-WX-SERVICE': 'land-share-test', // xxx中填入服务名称（微信云托管 - 服务管理 - 服务列表 - 服务名称）
-          // 其他header参数
-        }
-        // 其余参数同 wx.request
+    /**
+     * 看是否为新用户，如果是则自动注册
+     * 返回用户角色role
+     */
+    async register() {
+      const res = await app.callContainer({
+        path: '/my/loginOrRegister',
+        method: 'GET'
       });
-      // console.log(res);
+      // console.log(res.result.role);
+      return res.result.role;
     },
 
-    inc(){
-      wx.cloud.callContainer({
-        "config": {
-          "env": "prod-9grx0olg9c8cf232"
-        },
-        "path": "/api/count",
-        "header": {
-          "X-WX-SERVICE": "land-share-test"
-        },
-        "method": "POST",
-        "data": {
-          "action": "inc"
+    // 获取用户实名信息，暂时用不到
+    async getRealName() {
+      const res = await app.callContainer({
+        path: '/my/getUserInfo', 
+        method: 'GET'
+      });
+      // console.log(res.result);
+      return res.result;
+    },
+
+    // 更新用户实名信息，暂时用不到
+    async updaterealName() {
+      const res = await app.callContainer({
+        path: '/my/realName',
+        method: 'POST',
+        data: {
+          telenumber: '18355442634',
+          username: '刘云辉',
+          idnumber: '340***20021225****'
         }
-      })
+      });
+      console.log(res);
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+      // 根据app.js中的全局变量初始化
+      this.setData(
+        {
+          userInfo:{
+            nickName: app.globalData.nickName,
+            avatarUrl: app.globalData.avatarUrl
+          },
+          hasUserInfo: app.globalData.hasUserInfo
+        }
+      )
     },
 
     /**

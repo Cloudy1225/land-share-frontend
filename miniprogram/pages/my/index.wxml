@@ -5,7 +5,7 @@
         <wux-row>
             <wux-col span="3">
                 <wux-image wux-class="image" shape="circle" src=
-                "{{ userInfo.length!=0?userInfo.avatarUrl:defaultAvatar }}">
+                "{{ userInfo.avatarUrl }}">
                 </wux-image>
             </wux-col>
             <wux-col span="3" wx:if="{{!hasUserInfo}}">
@@ -17,12 +17,12 @@
                 {{ userInfo.nickName }}
             </wux-col>
             <wux-col span="3">
-                <wux-button block type="positive" bind:click="register">
+                <wux-button block type="positive" bind:click="getRealName">
                     test1
                 </wux-button>
             </wux-col>
             <wux-col span="3">
-                <wux-button block type="positive" bind:click="inc">
+                <wux-button block type="positive" bind:click="updaterealName">
                     test2
                 </wux-button>
             </wux-col>
