@@ -7,8 +7,23 @@ Page({
      */
     data: {
         userInfo: [],
+        role: '0',
         hasUserInfo: false
     },
+
+    // 跳转到指定页面
+    navigateToPage: (event) => {
+      console.log(event)
+      const path = '../'+event.currentTarget.dataset.page+'/index';
+      wx.navigateTo({
+        url: path
+      })
+    },
+
+    // 打开客服会话
+    // onContact(e) {
+    //   console.log('onContact', e)
+    // },
 
     // 点击登录函数
     login() {
@@ -26,7 +41,9 @@ Page({
           res1.then((fulfilledData) => {
             // console.log(fulfilledData)
             app.globalData.role = fulfilledData; // role变为1或2
-
+            this.setData({
+              role: fulfilledData
+            })
             wx.setStorage({ // 保存用户信息至本地缓存
               key:'userInfo',
               data:{
@@ -56,30 +73,6 @@ Page({
       return res.result.role;
     },
 
-    // 获取用户实名信息，暂时用不到
-    async getRealName() {
-      const res = await app.callContainer({
-        path: '/my/getUserInfo', 
-        method: 'GET'
-      });
-      // console.log(res.result);
-      return res.result;
-    },
-
-    // 更新用户实名信息，暂时用不到
-    async updaterealName() {
-      const res = await app.callContainer({
-        path: '/my/realName',
-        method: 'POST',
-        data: {
-          telenumber: '18355442634',
-          username: '刘云辉',
-          idnumber: '340***20021225****'
-        }
-      });
-      console.log(res);
-    },
-
     /**
      * 生命周期函数--监听页面加载
      */
@@ -91,6 +84,7 @@ Page({
             nickName: app.globalData.nickName,
             avatarUrl: app.globalData.avatarUrl
           },
+          role: app.globalData.role,
           hasUserInfo: app.globalData.hasUserInfo
         }
       )

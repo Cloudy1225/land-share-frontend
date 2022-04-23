@@ -1,44 +1,54 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/land/index",
-    "pages/information/index",
-    "pages/my/index"
-  ],
-  
-  "tabBar": {
-    "custom": true,
-		"color": "#000000",
-		"selectedColor": "#000000",
-		"backgroundColor": "#000000",
-    "list": [
-      {
-        "pagePath": "pages/index/index"
-      },
-      {
-        "pagePath": "pages/land/index"
-      },
-      {
-        "pagePath": "pages/information/index"
-      },
-      {
-        "pagePath": "pages/my/index"
-      }
-    ]
-  },
-  "window": {
-    "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "闲置土地信息共享",
-    "navigationBarTextStyle": "black"
-  },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2",
-  "usingComponents": {
-    "wux-button": "wuxui-lib/button/index",
-    "wux-row": "wuxui-lib/row/index",
-    "wux-col": "wuxui-lib/col/index",
-    "wux-image": "wuxui-lib/image/index"
-  }
+    "pages": [
+        "pages/index/index",
+        "pages/land/index",
+        "pages/information/index",
+        "pages/my/index",
+        "pages/myPost/index",
+        "pages/myCollection/index",
+        "pages/myMessage/index",
+        "pages/landPost/index",
+        "pages/landRequire/index",
+        "pages/landManage/index",
+        "pages/requireManage/index",
+        "pages/realName/index",
+        "pages/helpCenter/index",
+        "pages/aboutUs/index",
+        "pages/setting/index"
+    ],
+    "tabBar": {
+        "custom": true,
+        "color": "#000000",
+        "selectedColor": "#000000",
+        "backgroundColor": "#000000",
+        "list": [
+            {
+                "pagePath": "pages/index/index"
+            },
+            {
+                "pagePath": "pages/land/index"
+            },
+            {
+                "pagePath": "pages/information/index"
+            },
+            {
+                "pagePath": "pages/my/index"
+            }
+        ]
+    },
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#0081ff",
+        "navigationBarTitleText": "闲置土地信息共享",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2",
+    "usingComponents": {
+        "wux-button": "wuxui-lib/button/index",
+        "wux-row": "wuxui-lib/row/index",
+        "wux-col": "wuxui-lib/col/index",
+        "wux-image": "wuxui-lib/image/index"
+    }
 }

@@ -1,31 +1,138 @@
 <!--pages/my/index.wxml-->
-
 <view class="my">
-    <view class="login">
+
+    <view class="view1">
+        <wux-wing-blank size="large">
         <wux-row>
             <wux-col span="3">
                 <wux-image wux-class="image" shape="circle" src=
-                "{{ userInfo.avatarUrl }}">
+                "{{ userInfo.avatarUrl }}"  bindtap="login" wx:if="{{role=='0'}}">
+                </wux-image>
+                <wux-image wux-class="image" shape="circle" src=
+                "{{ userInfo.avatarUrl }}"  bindtap="navigateToPage" data-page="realName" wx:else>
                 </wux-image>
             </wux-col>
-            <wux-col span="3" wx:if="{{!hasUserInfo}}">
-                <wux-button block type="positive" bind:click="login">
-                    点击登录
-                </wux-button>
+            <wux-col push= "0" span="8">
+                <view class="rightAvatar" bindtap="login" wx:if="{{!hasUserInfo}}">
+                    <view class="nickName">点此登录</view>
+                    <view class="underNickName">登录更精彩</view>
+                </view>
+                <view class="rightAvatar" wx:else>
+                    <view class="nickName" bindtap="navigateToPage" data-page="setting">
+                    {{ userInfo.nickName }}
+                    </view>
+                    <view class="underNickName" bindtap="navigateToPage" data-page="realName"
+                    wx:if="{{role=='1'}}">
+                     去实名享更多功能
+                    </view>
+                    <view class="underNickName" bindtap="navigateToPage" data-page="realName" wx:else>
+                    您已实名！
+                    </view>
+                </view>
             </wux-col>
-            <wux-col span="3" wx:else>
-                {{ userInfo.nickName }}
-            </wux-col>
-            <wux-col span="3">
-                <wux-button block type="positive" bind:click="getRealName">
-                    test1
-                </wux-button>
-            </wux-col>
-            <wux-col span="3">
-                <wux-button block type="positive" bind:click="updaterealName">
-                    test2
-                </wux-button>
-            </wux-col>
-         </wux-row>
+        </wux-row>
+        </wux-wing-blank>
+
+        <wux-white-space size="large" />
+
+        <wux-wing-blank size="large">
+            <wux-grids>
+                <wux-grid  bindtap="navigateToPage" data-page="myPost">
+                <wux-icon type="ios-bulb" color="#0081ff" />
+                <wux-white-space size="small" />
+                <view>我的发布</view>
+                </wux-grid>
+                <wux-grid  bindtap="navigateToPage" data-page="myCollection">
+                <wux-icon type="ios-star" color="#0081ff" />
+                <wux-white-space size="small" />
+                <view>我的收藏</view>
+                </wux-grid>
+                <wux-grid  bindtap="navigateToPage" data-page="myMessage">
+                <wux-icon type="ios-mail" color="#0081ff" />
+                <wux-white-space size="small" />
+                <view>我的消息</view>
+                </wux-grid>
+            </wux-grids>
+        </wux-wing-blank>
     </view>
+
+    <view class="view2">
+        <wux-white-space size="large" />
+        <wux-wing-blank size="large">
+            <wux-cell-group title="常用功能">
+                <wux-cell
+                thumb="../../images/landPost.png"
+                title="我要发地"
+                is-link
+                url="/pages/landPost/index"
+                open-type="navigateTo">
+                </wux-cell> 
+                <wux-cell
+                thumb="../../images/landRequire.png"
+                title="我要找地"
+                is-link
+                url="/pages/landRequire/index"
+                open-type="navigateTo">
+                </wux-cell> 
+                <wux-cell
+                thumb="../../images/landManage.png"
+                title="地源管理"
+                is-link
+                url="/pages/landManage/index"
+                open-type="navigateTo">
+                </wux-cell> 
+                <wux-cell
+                thumb="../../images/requireManage.png"
+                title="需求管理"
+                is-link
+                url="/pages/requireManage/index"
+                open-type="navigateTo">
+                </wux-cell>
+            </wux-cell-group>
+        </wux-wing-blank>
+    </view>
+
+    <view class="view3">
+        <wux-white-space size="large" />
+        <wux-wing-blank size="large">
+            <wux-cell-group title="更多服务">
+                <wux-cell
+                thumb="../../images/realName.png"
+                title="实名认证"
+                is-link
+                url="/pages/realName/index"
+                open-type="navigateTo">
+                </wux-cell>
+                <wux-cell
+                thumb="../../images/contactService.png"
+                title="联系客服"
+                is-link
+                open-type="contact"
+                bind:contact="onContact">
+                </wux-cell>
+                <wux-cell
+                thumb="../../images/helpCenter.png"
+                title="帮助中心"
+                is-link
+                url="/pages/helpCenter/index"
+                open-type="navigateTo">
+                </wux-cell>
+                <wux-cell
+                thumb="../../images/aboutUs.png"
+                title="关于我们"
+                is-link
+                url="/pages/aboutUs/index"
+                open-type="navigateTo">
+                </wux-cell>
+                <wux-cell
+                thumb="../../images/setting.png"
+                title="设置"
+                is-link
+                url="/pages/setting/index"
+                open-type="navigateTo">
+                </wux-cell>
+            </wux-cell-group>
+        </wux-wing-blank>
+    </view>
+
 </view>

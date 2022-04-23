@@ -3,7 +3,7 @@ App({
   // 全局变量
   globalData: {
     nickName: '',
-    avatarUrl: '../../images/unloginAvatar.png',
+    avatarUrl: '../../images/unLoginAvatar.png',
     hasUserInfo: false,
     role: '0' // 用户角色，初始值为0，后面改为1或2
   },  
@@ -60,6 +60,7 @@ App({
         // 其余参数同 wx.request
       })
       console.log(`微信云托管调用结果${result.errMsg} | callid:${result.callID}`)
+      console.log(result.data)
       return result.data // 业务数据在data中
     } catch(e){
       const error = e.toString()
