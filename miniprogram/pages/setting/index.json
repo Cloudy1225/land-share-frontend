@@ -1,3 +1,15 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "设置",
+  "usingComponents": {
+    "wux-avatar": "../../wuxui-lib/avatar/index",
+    "wux-icon": "../../wuxui-lib/icon/index",
+    "wux-grids": "../../wuxui-lib/grids/index",
+    "wux-grid": "../../wuxui-lib/grid/index",
+    "wux-tag": "../../wuxui-lib/tag/index",
+    "wux-white-space": "../../wuxui-lib/white-space/index",
+    "wux-wing-blank": "../../wuxui-lib/wing-blank/index",
+    "wux-cell-group": "../../wuxui-lib/cell-group/index",
+    "wux-cell": "../../wuxui-lib/cell/index",
+    "wux-input":"../../wuxui-lib/input/index"
+  }
 }
