@@ -1,2 +1,46 @@
 <!--pages/setting/index.wxml-->
-<text>pages/setting/index.wxml</text>
+<view class="setting">
+
+<view class="page__setting">
+
+    <wux-wing-blank size="large">
+
+    <wux-white-space size="large" />
+    <wux-cell-group >
+        <wux-cell title="我的实名信息"
+                    is-link
+            url="/pages/realName/index"
+        ></wux-cell>
+        <wux-cell title="电话" extra="18888888888"
+        ></wux-cell>
+        <wux-cell title="我的地址"
+        is-link
+        ></wux-cell>
+    </wux-cell-group>
+
+    <wux-white-space size="large" />
+    <wux-cell-group >
+        <wux-cell title="版本号" extra="1.0.0"
+            ></wux-cell>
+        <wux-cell title="隐私政策"
+            is-link
+        ></wux-cell>
+        <wux-cell title="注销账号"
+            is-link
+            bindtap="cancelAccount"
+        ></wux-cell>
+    </wux-cell-group>
+
+    <wux-white-space size="large" />
+    <wux-button block type="assertive"
+        wx:if="{{app.globaldata.role!=0}}"
+        bindtap="logout"
+        >退出登录
+
+    </wux-button>
+
+
+</wux-wing-blank>
+
+</view>
+</view>

@@ -1,1 +1,27 @@
 /* pages/setting/index.wxss */
+@import '../../wuxui-lib/styles/index.wxss';
+
+.view1 {
+    background: -webkit-linear-gradient(top,#0081ff,#F6F6F6);
+}
+
+
+
+.image {
+    width: 100% !important;
+    height: auto !important;
+    padding-bottom: 100% !important;
+}
+
+.wux-grids {
+    border-radius: 5px;
+}
+
+.wux-cell-group .wux-cell-group__hd{
+    color: black;
+    font-size: 30rpx;
+}
+
+.wux-cell-group .wux-cell-group__bd {
+    border-radius: 5px;
+}

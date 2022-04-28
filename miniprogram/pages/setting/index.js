@@ -1,4 +1,5 @@
 // pages/setting/index.js
+const app = getApp();
 Page({
 
     /**
@@ -6,6 +7,53 @@ Page({
      */
     data: {
 
+    },
+
+     //退出登录函数
+    logout(){
+        wx.showModal({
+            title: '提示',
+            content: '确定退出登录吗，此操作会清空缓存',
+            cancelColor: 'cancelColor',
+            success: function(res){
+                if(res.confirm){
+                    app.globalData.role="0";
+                    app.globalData.hasUserInfo="false";
+                    wx.clearStorage({
+                        success: (res) => {},
+                    });
+                    wx.switchTab({
+                        url: '/pages/my/index',
+                    });
+                }
+            }
+        });
+    },
+
+    //注销账号函数
+    cancelAccount(){
+        wx.showModal({
+            title: '提示',
+            content: '您确定要注销账号吗，注销后无法恢复',
+            cancelColor: 'cancelColor',
+            success: function(res){
+                if(res.confirm){
+                    app.callContainer({
+                        path: '/my/deleteUser',
+                        method: 'GET'
+                    });
+                    app.globalData.role="0";
+                    app.globalData.hasUserInfo="false";
+                    wx.clearStorage({
+                      success: (res) => {},
+                    });
+                    wx.switchTab({
+                      url: '/pages/my/index',
+                    });
+                }
+            }
+        });
+        //console.log(res)
     },
 
     /**
