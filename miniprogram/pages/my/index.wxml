@@ -13,7 +13,7 @@
                 </wux-image>
             </wux-col>
             <wux-col push= "0" span="8">
-                <view class="rightAvatar" bindtap="login" wx:if="{{!hasUserInfo}}">
+                <view class="rightAvatar" bindtap="login" wx:if="{{role=='0'}}">
                     <view class="nickName">点此登录</view>
                     <view class="underNickName">登录更精彩</view>
                 </view>
@@ -129,7 +129,7 @@
                 title="设置"
                 is-link
                 url="/pages/setting/index"
-                open-type="navigateTo">
+                open-type="redirectTo">
                 </wux-cell>
             </wux-cell-group>
         </wux-wing-blank>
