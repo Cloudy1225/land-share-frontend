@@ -21,7 +21,7 @@
 						    		bindtap="onItemSelect"
 					    		>
 					    			<text>{{ item[fieldNames['label']] }}</text>
-					    			<icon class="{{ classes.icon }}" type="success_no_circle" size="16" color="#ef473a" wx:if="{{ activeValue[optionIndex] === item[fieldNames['value']] }}" />
+					    			<icon class="{{ classes.icon }}" type="success_no_circle" size="16" color="#387ef5" wx:if="{{ activeValue[optionIndex] === item[fieldNames['value']] }}" />
 					    		</view>
 					    	</block>
 			    		</view>

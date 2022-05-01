@@ -1,23 +1,24 @@
-.wux-upload {
+/* custom-upload/index.wxss */
+.wux-custom-upload {
     position: relative;
     display: block
 }
 
-.wux-upload::after,
-.wux-upload::before {
+.wux-custom-upload::after,
+.wux-custom-upload::before {
     display: table;
     content: " "
 }
 
-.wux-upload::after {
+.wux-custom-upload::after {
     clear: both
 }
 
-.wux-upload--disabled {
+.wux-custom-upload--disabled {
     opacity: .3
 }
 
-.wux-upload--picture-card .wux-upload__select {
+.wux-custom-upload--picture-card .wux-custom-upload__select {
     width: 156rpx;
     height: 156rpx;
     border: 1PX dashed #d9d9d9;
@@ -29,7 +30,7 @@
     float: left
 }
 
-.wux-upload--picture-card .wux-upload__button {
+.wux-custom-upload--picture-card .wux-custom-upload__button {
     width: 100%;
     height: 100%;
     display: -ms-flexbox;
@@ -44,30 +45,30 @@
     box-sizing: border-box
 }
 
-.wux-upload--picture-card .wux-upload__button image {
+.wux-custom-upload--picture-card .wux-custom-upload__button image {
     width: 100%;
     height: 100%;
     display: inline-block;
     overflow: hidden
 }
 
-.wux-upload--picture-card .wux-upload__files {
+.wux-custom-upload--picture-card .wux-custom-upload__files {
     position: relative;
     display: block;
     float: left
 }
 
-.wux-upload--picture-card .wux-upload__files::after,
-.wux-upload--picture-card .wux-upload__files::before {
+.wux-custom-upload--picture-card .wux-custom-upload__files::after,
+.wux-custom-upload--picture-card .wux-custom-upload__files::before {
     display: table;
     content: " "
 }
 
-.wux-upload--picture-card .wux-upload__files::after {
+.wux-custom-upload--picture-card .wux-custom-upload__files::after {
     clear: both
 }
 
-.wux-upload--picture-card .wux-upload__file {
+.wux-custom-upload--picture-card .wux-custom-upload__file {
     width: 156rpx;
     height: 156rpx;
     float: left;
@@ -79,22 +80,22 @@
     box-sizing: border-box
 }
 
-.wux-upload--picture-card .wux-upload__file--uploading {
+.wux-custom-upload--picture-card .wux-custom-upload__file--uploading {
     border-style: dashed
 }
 
-.wux-upload--picture-card .wux-upload__file--error {
+.wux-custom-upload--picture-card .wux-custom-upload__file--error {
     border-color: #f5222d
 }
 
-.wux-upload--picture-card .wux-upload__thumb {
+.wux-custom-upload--picture-card .wux-custom-upload__thumb {
     width: 100%;
     height: 100%;
     display: inline-block;
     overflow: hidden
 }
 
-.wux-upload--picture-card .wux-upload__remove {
+.wux-custom-upload--picture-card .wux-custom-upload__remove {
     width: 30rpx;
     height: 30rpx;
     position: absolute;
