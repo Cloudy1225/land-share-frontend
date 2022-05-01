@@ -17,8 +17,10 @@ Page({
             cancelColor: 'cancelColor',
             success: function(res){
                 if(res.confirm){
-                    app.globalData.role="0";
-                    app.globalData.hasUserInfo="false";
+                    app.globalData.role='0';
+                    app.globalData.nickName= '';
+                    app.globalData.avatarUrl= '../../images/unLoginAvatar.png';
+                    app.globalData.telenumber= '';
                     wx.clearStorage({
                         success: (res) => {},
                     });
@@ -34,7 +36,7 @@ Page({
     cancelAccount(){
         wx.showModal({
             title: '提示',
-            content: '您确定要注销账号吗，注销后无法恢复',
+            content: '您确定要注销账号吗，注销后所有数据将会丢失',
             cancelColor: 'cancelColor',
             success: function(res){
                 if(res.confirm){
@@ -42,8 +44,10 @@ Page({
                         path: '/my/deleteUser',
                         method: 'GET'
                     });
-                    app.globalData.role="0";
-                    app.globalData.hasUserInfo="false";
+                    app.globalData.role='0';
+                    app.globalData.nickName= '';
+                    app.globalData.avatarUrl= '../../images/unLoginAvatar.png';
+                    app.globalData.telenumber= '';
                     wx.clearStorage({
                       success: (res) => {},
                     });

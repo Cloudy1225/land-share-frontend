@@ -1,2 +1,137 @@
 <!--pages/landPost/index.wxml-->
-<text>pages/landPost/index.wxml</text>
+<wux-toptips id="wux-toptips" />
+<wux-cascader visible="{{ visible }}" default-value="{{ landTypeCode }}" title="土地类型" options="{{ landTypes }}" bind:close="closeLandTypes" bind:change="changeLandType" />
+
+<view class="landPost">
+
+    <wux-notice-bar
+      content="请确保信息真实有效，带 * 号信息请务必填写"
+    />
+    	<wux-cell-group>
+            <wux-cell title="土地类型" class="picker badge" hasLine
+            extra="请选择土地类型" bind:click="openLandTypes"
+            wx:if="{{landType==''}}">
+            </wux-cell>
+    		<wux-cell title="土地类型" class="picker picked badge" hasLine
+            extra="{{ landType }}" bind:click="openLandTypes"
+            wx:else>
+            </wux-cell>
+
+            <wux-picker options="{{ transferTypes }}" value="{{ transferTypeCode }}" 
+            cols="1" bind:confirm="confirmTransferType" bind:valueChange="onValueChange"
+            wx:if="{{transferType==''}}">
+                <wux-cell title="流转方式" class="picker badge" hasLine 
+                extra="请选择流转类型">
+                </wux-cell>
+            </wux-picker>
+            <wux-picker options="{{ transferTypes }}" value="{{ transferTypeCode }}" 
+            cols="1" bind:confirm="confirmTransferType" bind:valueChange="onValueChange"
+            wx:else>
+                <wux-cell title="流转方式" class="picker picked badge" hasLine 
+                    extra="{{ transferType }}">
+                </wux-cell>
+            </wux-picker>
+
+            <wux-cell hover-class="none" class="badge" hasLine>
+                <wux-input label="土地面积" type="digit" placeholder="请填写土地面积"
+                value="{{ area }}" controlled 
+                bind:change="onChange" data-index="area">
+                    <view slot="footer" style="margin-left: 5px">亩</view>
+                </wux-input>
+            </wux-cell>
+
+            <wux-cell hover-class="none" class="badge" hasLine>
+                <wux-input label="流转年限" type="digit" placeholder="请填写流转年限"
+                value="{{ transferTime }}" controlled
+                bind:change="onChange" data-index="transferTime">
+                    <view slot="footer" style="margin-left: 5px; text-align: center;">年</view>
+                </wux-input>
+            </wux-cell>
+
+            <wux-cell hover-class="none" class="badge" hasLine>
+                <wux-input label="流转单价" type="digit" placeholder="请填写流转单价"
+                value="{{ price }}" controlled
+                bind:change="onChange" data-index="price">
+                    <view slot="footer" style="margin-left: 5px">元/年/亩</view>
+                </wux-input>
+            </wux-cell>
+
+            <wux-cell hover-class="none" class="badge" hasLine>
+                <wux-input label="土地位置" placeholder="请输入地址或点击定位"
+                value="{{ address }}" controlled
+                bind:change="onChange" data-index="address">
+                </wux-input>
+                <view style="color: #387ef5; margin-left: 5px; font-size: large; font-weight: 400;" 
+                slot="footer" 
+                bindtap='usePlugin'>定位
+                </view>
+            </wux-cell>
+
+            <wux-cell hover-class="none" class="badge" hasLine>
+                <wux-input label="联系电话" type="number" placeholder="请填写手机号码"
+                value="{{ telenumber }}" controlled error="{{ telenumberError }}" 
+                bind:change="onChange" data-index="telenumber" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:error="onError" />
+            </wux-cell>
+
+            <wux-cell title="土地描述" hover-class="none">
+            </wux-cell>
+            <wux-cell hover-class="none" hasLine>
+                <wux-textarea clear hasCount rows="4" maxlength="500" cursorSpacing="80" placeholder="介绍一下土地的亮点，更有利于快速流转哦！" 
+                value="{{ description }}" controlled
+                bind:change="onChange" data-index="description"/>
+            </wux-cell>
+
+            <wux-cell title="土地图片" hover-class="none" extra="最多可以上传5张图片与一个视频">
+            </wux-cell>
+            <wux-cell hover-class="none" hasLine>
+                <wux-custom-upload 
+                style="display: inline-block;"
+                defaultFileType="image"
+                count="5"
+                max="5"
+                listType="picture-card" 
+                controlled
+                fileList="{{ landPictures }}"
+                cloudPath="landPost/land/" 
+                bind:change="changeLandPictures" bind:success="onSuccess" bind:fail="onFail" bind:complete="onComplete" bind:preview="previewImage">
+                    <wux-icon type="ios-images" color="#0081ff" />
+                </wux-custom-upload>
+
+                <wux-custom-upload
+                style="display: inline-block;"
+                defaultFileType="video"
+                count="1"
+                max="1" 
+                listType="picture-card" 
+                controlled
+                fileList="{{ landVideo }}" 
+                cloudPath="landPost/land/"
+                 bind:change="changeLandVideo" bind:success="onSuccess" bind:fail="onFail" bind:complete="onComplete" bind:preview="previewVideo">
+                    <wux-icon type="ios-videocam" color="#0081ff" />
+                </wux-custom-upload>
+            </wux-cell>
+            <wux-cell title="土地权证" class="badge" hover-class="none" extra="最多可以上传5张图片"></wux-cell>
+            <wux-cell hover-class="none" hasLine>
+                <wux-custom-upload 
+                defaultFileType="image"
+                count="5"
+                max="5" 
+                listType="picture-card" 
+                controlled
+                fileList="{{ landWarrants }}" 
+                cloudPath="landPost/warrant/"
+                bind:change="changeLandWarrants" bind:success="onSuccess" bind:fail="onFail" bind:complete="onComplete" bind:preview="previewImage" bind:remove="deleteFile">
+                    <wux-icon type="ios-images" color="#0081ff" />
+            </wux-custom-upload>
+            </wux-cell>
+            
+            
+
+    	</wux-cell-group>
+
+        
+
+        <wux-wing-blank size="small">
+            <wux-button block type="positive" bind:click="submit">发布</wux-button>
+        </wux-wing-blank>
+</view>

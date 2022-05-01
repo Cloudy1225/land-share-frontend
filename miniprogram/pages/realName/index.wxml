@@ -1,2 +1,3 @@
 <!--pages/realName/index.wxml-->
 <text>pages/realName/index.wxml</text>
+<wux-button block type="positive" bind:click="updateRealName">更新实名</wux-button>

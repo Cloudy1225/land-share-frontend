@@ -1,4 +1,5 @@
 // pages/realName/index.js
+const app = getApp();
 Page({
 
     /**
@@ -20,16 +21,38 @@ Page({
   
       // 更新用户实名信息
       async updateRealName() {
+        const telenumber = '18355442634';
+        const username = '刘云辉';
+        const idnumber = '340421200212253412';
         const res = await app.callContainer({
           path: '/my/realName',
           method: 'POST',
           data: {
-            telenumber: '18355442634',
-            username: '刘云辉',
-            idnumber: '340***20021225****'
+            telenumber: telenumber,
+            username: username,
+            idnumber: idnumber
           }
         });
-        console.log(res);
+        // console.log("res", res);
+        if(res.code=="00000"){ //云托管成功返回
+            app.globalData.role = '2'; // role变为1或2
+            app.globalData.telenumber = telenumber;
+            wx.setStorage({ // 保存用户信息至本地缓存
+                key:'userInfo',
+                data:{
+                    nickName: app.globalData.nickName,
+                    avatarUrl: app.globalData.avatarUrl,
+                    telenumber: telenumber,
+                    role: '2'
+                },
+                success(res) {
+                    console.log("缓存成功", res)
+                },
+                fail(err) {
+                    console.log("缓存失败", err)
+                }
+            })
+        }
       },
 
     /**
