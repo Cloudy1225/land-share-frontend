@@ -75,5 +75,8 @@ App({
         throw new Error(`微信云托管调用失败${error}`)
       }
     }
-  }
+  },
+
+  // 引入`towxml3.0`解析方法
+  towxml: require('/towxml/index')
 })

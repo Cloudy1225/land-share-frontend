@@ -1,2 +1,4 @@
 <!--pages/information/index.wxml-->
 <text>pages/information/index.wxml</text>
+<wux-button block type="positive" bind:click="toArticle" data-index='1'>土地新闻1</wux-button>
+<wux-button block type="positive" bind:click="toArticle" data-index='2'>土地问答1</wux-button>
