@@ -96,6 +96,9 @@ Page({
         address: '',
         longtitude: '',
         latitude: '',
+        province: '',
+        city: '',
+        district: '',
         description: '',
         landPictures: [],
         landVideo: [],
@@ -360,6 +363,7 @@ Page({
         let landPicturesFileIDs = this.data.landPictures.map(x => {return x.res.fileID}).join('|');
         let landVideoFileID = this.data.landVideo.map(x => {return x.res.fileID}).pop();
         let landWarrantsFileIDs = this.data.landWarrants.map(x => {return x.res.fileID}).join('|');
+        let adInfo = this.data.province+'/'+this.data.city+'/'+this.data.district;
         const res = await app.callContainer({
             path: 'landPost/createLandPost',
             method: 'POST',
@@ -372,6 +376,7 @@ Page({
                 address: this.data.address,
                 longtitude: this.data.longtitude,
                 latitude: this.data.latitude,
+                adInfo: adInfo,
                 description: this.data.description,
                 pictureFileID: landPicturesFileIDs,
                 videoFileID: landVideoFileID,
@@ -422,23 +427,30 @@ Page({
      */
     onShow: function () {
         // 从地图选点插件返回后，在页面的onShow生命周期函数中能够调用插件接口，取得选点结果对象
+        const rawAddress = this.data.address
         this.setData({
             address: ''
         })
         try{
             const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
             
-            // console.log(location)
+            console.log("111",location)
             this.setData({
                 address: location.address,
                 longtitude: location.longitude,
-                latitude: location.latitude
+                latitude: location.latitude,
+                province: location.province,
+                city: location.city,
+                district: location.district
             })
             console.log("获取地址成功：", this.data.address)
             // console.log("long", this.data.longitude)
             // console.log("la", this.data.latitude)
         }catch(e){
             console.log("尚未定位")
+            this.setData({
+                address: rawAddress
+            })
         }
     },
 
