@@ -14,8 +14,7 @@
         "pages/realName/index",
         "pages/helpCenter/index",
         "pages/aboutUs/index",
-        "pages/setting/index",
-        "pages/realName1/index"
+        "pages/setting/index"
     ],
     "tabBar": {
         "custom": true,
