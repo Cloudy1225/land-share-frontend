@@ -1,2 +1,3 @@
 <!--index.wxml-->
 哟，编译成功了
+<wux-button block type="positive" bind:click="usePlugin">去这里</wux-button>
