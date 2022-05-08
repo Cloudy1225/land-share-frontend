@@ -384,8 +384,11 @@ Page({
             $wuxToptips().success({
                 hidden: false,
                 text: '上传成功，待审核',
-                duration: 3000,
-                success() {},
+                duration: 1500,
+                success() {
+                  setTimeout(function(){
+                    wx.navigateBack({})},1000);
+                },
             })
         }else{
             wx.showModal({

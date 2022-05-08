@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+    "navigationBarTitleText": "实名认证",
+    "usingComponents": {
+      "wux-toptips": "../../wuxui-lib/toptips/index",
+      "wux-avatar": "../../wuxui-lib/avatar/index",
+      "wux-white-space": "../../wuxui-lib/white-space/index",
+      "wux-wing-blank": "../../wuxui-lib/wing-blank/index"
+    }
 }

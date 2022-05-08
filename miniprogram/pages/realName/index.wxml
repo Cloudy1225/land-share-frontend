@@ -1,3 +1,67 @@
 <!--pages/realName/index.wxml-->
-<text>pages/realName/index.wxml</text>
-<wux-button block type="positive" bind:click="updateRealName">更新实名</wux-button>
+<wux-toptips id="wux-toptips" />
+
+<view class="realName">
+
+  <view class="view1">
+
+
+    <wux-white-space size="large" />
+    <wux-white-space size="large" />
+        <wux-wing-blank size="large">
+        <wux-row>
+            <wux-col push="4" span="4">
+                <wux-image wux-class="image" shape="circle" src=
+                "{{ avatarUrl }}"  bindtap="login" wx:if="{{role=='0'}}">
+                </wux-image>
+                <wux-image wux-class="image" shape="circle" src=
+                "{{ avatarUrl }}"  bindtap="navigateToPage" data-page="setting" wx:else>
+                </wux-image>
+            </wux-col>
+            
+        </wux-row>
+        <wux-white-space size="large" />
+        <wux-row>
+              <wux-col push="2" span="8">
+              <view class="nickName" bindtap="navigateToPage" data-page="setting">
+                    {{ nickName }}
+              </view>
+            </wux-col>
+        </wux-row>
+        </wux-wing-blank>
+
+        <wux-white-space size="large" />
+        <wux-white-space size="large" />
+
+    </view>
+
+  <wux-cell-group>
+    <wux-cell hover-class="none" hasLine="true">
+      <wux-input label="真实姓名" value="{{ usernameInput }}" controlled clear
+      placeholder="请输入您的真实姓名"
+      data-index="usernameInput"
+      bind:change="onChange" bind:clear="onClear"  />
+    </wux-cell>
+    <wux-cell hover-class="none" hasLine>
+      <wux-input label="身份证号" value="{{ IDnumberInput }}" controlled error="{{ IDnumberError }}" type="number" clear
+      placeholder="请输入您的身份证号"
+      data-index="IDnumberInput"
+      bind:change="onChange" bind:clear="onClear" bind:error="onError" />
+    </wux-cell>
+    <wux-cell hover-class="none" hasLine>
+      <wux-input label="手机号码" value="{{ phonenumberInput }}" controlled error="{{ phonenumberError }}" type="number" clear
+      placeholder="请输入您的手机号码"
+      data-index="phonenumberInput"
+      bind:change="onChange" bind:clear="onClear" bind:error="onError" />
+    </wux-cell>
+</wux-cell-group>
+
+<wux-white-space size="large" />
+
+<wux-wing-blank size="small">
+  <wux-button block type="positive" bind:click="submit" wx:if="{{role=='1'}}">提交</wux-button>
+  <wux-button block type="positive" bind:click="submit" wx:else>更改</wux-button>
+</wux-wing-blank>
+
+
+</view>
