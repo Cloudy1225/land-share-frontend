@@ -1,1 +1,19 @@
 /* pages/realName/index.wxss */
+@import '../../wuxui-lib/styles/index.wxss';
+
+.view1 {
+  background: -webkit-linear-gradient(top,#0081ff,#F6F6F6);
+}
+
+.nickName {
+  text-align: center;
+  color: black;
+  font-size: 19px;
+  
+}
+
+.image {
+  width: 100% !important;
+  height: auto !important;
+  padding-bottom: 100% !important;
+}
