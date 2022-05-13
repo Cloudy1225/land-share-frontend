@@ -15,7 +15,8 @@
         "pages/helpCenter/index",
         "pages/aboutUs/index",
         "pages/setting/index",
-        "pages/article/index"
+        "pages/article/index",
+        "pages/landDetail/index"
     ],
     "tabBar": {
         "custom": true,
@@ -74,6 +75,8 @@
         "wux-white-space": "wuxui-lib/white-space/index",
         "wux-wing-blank": "wuxui-lib/wing-blank/index",
         "wux-input": "wuxui-lib/input/index",
-        "wux-custom-upload": "wuxui-lib/custom-upload/index"
+        "wux-custom-upload": "wuxui-lib/custom-upload/index",
+        "wux-tag": "wuxui-lib/tag/index",
+        "wux-search-bar": "wuxui-lib/search-bar/index"
     }
 }

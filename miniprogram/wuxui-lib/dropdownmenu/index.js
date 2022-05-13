@@ -167,7 +167,7 @@ function getShowOptions() {
     properties: {
         prefixCls: {
             type: String,
-            value: "wux-filterbar"
+            value: "wux-dropdownmenu"
         },
         items: {
             type: Array,

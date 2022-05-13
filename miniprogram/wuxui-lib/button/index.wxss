@@ -3,7 +3,7 @@
     border-radius: 0;
     color: inherit !important;
     background: 0 0 !important;
-    font-size: inherit;
+    /* font-size: inherit; */
     font-weight: 400;
     line-height: inherit;
     text-align: inherit;
@@ -24,7 +24,7 @@
     vertical-align: middle;
     text-align: center;
     text-overflow: ellipsis;
-    font-size: 32rpx;
+    /* font-size: 32rpx; */
     line-height: 84rpx;
     cursor: pointer
 }

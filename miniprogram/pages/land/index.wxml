@@ -1,2 +1,76 @@
 <!--pages/land/index.wxml-->
-<text>pages/land/index.wxml</text>
+<wux-cascader visible="{{ visible1 }}" default-value="{{ districtCode }}" title="选择地区" options="{{ districts }}" bind:close="closeDistricts" bind:change="changeDistrict" />
+<wux-cascader visible="{{ visible2 }}" default-value="{{ landTypeCode }}" title="土地类型" options="{{ landTypes }}" bind:close="closeLandTypes" bind:change="changeLandType" />
+<wux-picker visible="{{ visible3 }}" controlled options="{{ transferTypes }}" 
+toolbar="{{toolbar}}"
+value="{{ transferTypeCode }}" cols="1" bind:confirm="confirmTransferType" bind:cancel="cancelTransferType" bind:valueChange="onValueChange"></wux-picker>
+
+
+<view class="page">
+    <wux-search-bar clear placeholder="输入土地类型" maxlength="8" />
+    <wux-row>
+        <wux-col span="4">
+            <wux-button class="filteritem" wux-class="button" hoverClass="none"
+            block type="light" full bind:click="openDistricts">
+                {{district}}
+                <view class="wux-accordion__{{rotated1}}arrow"></view>
+            </wux-button>
+        </wux-col>
+        <wux-col span="4">
+            <wux-button class="filteritem" wux-class="button" hoverClass="none"
+            block type="light" full bind:click="openLandTypes">
+                {{landType}}
+                <view class="wux-accordion__{{rotated2}}arrow"></view>
+            </wux-button>
+        </wux-col>
+        <wux-col span="4">
+            <wux-button wux-class="button" hoverClass="none" 
+            block type="light" full bind:click="openTransferTypes">
+                {{transferType}}
+                <view class="wux-accordion__{{rotated3}}arrow"></view>
+            </wux-button>
+            
+        </wux-col>
+    </wux-row>
+
+    <!--
+    <wux-filterbar items="{{ sorts }}" bind:change="changeSorts" bind:open="onOpen" bind:close="onClose"/>
+    -->
+
+    <view class="panel panel_access" catchtouchmove="{{ opened ? 'noop' : '' }}">
+        <view class="panel__bd">
+            <view class="media-box media-box_appmsg" hover-class="cell_active" wx:for="{{ landDetails }}" wx:key="index" data-index="{{ index }}" bindtap="toLandDetailPage">
+                <view class="media-box__hd media-box__hd_in-appmsg">
+                    <image class="media-box__thumb" src="{{ item.defaultPicture }}" />
+                </view>
+                <view class="media-box__bd media-box__bd_in-appmsg">
+                    <view class="media-box__title">{{ item.title }}</view>
+                    <wux-white-space size="default" />
+                    <view class="media-box__desc">{{ item.description }}</view>
+                    <wux-white-space size="default" />
+                    
+                    <view class="media-box__tag">
+                        <wux-tag class="media-box__tag__meta" color="green">
+                            {{ item.landType }}
+                        </wux-tag>
+                        <wux-tag class="media-box__tag__meta" color="blue">
+                            {{ item.transferType }}
+                        </wux-tag>
+                       
+                    </view>
+                    <view class="media-box__info">
+                        <view class="media-box__info__meta">{{ item.area }}亩</view>
+                        <view class="media-box__info__meta">{{ item.transferTime }}年</view>
+                        <view class="media-box__info__meta">{{ item.price }}元/亩/年</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+   
+    <!-- <wux-button block type="positive" bind:click="getLands"> get土地</wux-button> -->
+    <wux-white-space size="large" />
+    <wux-white-space size="large" />
+    <wux-white-space size="large" />
+    <wux-white-space size="small" />
+</view>
