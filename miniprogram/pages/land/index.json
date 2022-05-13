@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "土地",
+  "usingComponents": {
+    "wux-cascader": "../../wuxui-lib/cascader/index",
+    "wux-filterbar": "../../wuxui-lib/filterbar/index",
+    "wux-popup-select": "../../wuxui-lib/popup-select/index",
+    "wux-picker": "../../wuxui-lib/picker/index"
+  }
 }

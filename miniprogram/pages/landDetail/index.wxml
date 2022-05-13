@@ -1,0 +1,6 @@
+<!--pages/landDetail/index.wxml-->
+<view class="landDetail">
+    <view>title: {{landDetail.title}}</view>
+    <view>address: {{landDetail.address}}</view>
+    <view>...</view>
+</view>
