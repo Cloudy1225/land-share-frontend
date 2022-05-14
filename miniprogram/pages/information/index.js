@@ -5,7 +5,54 @@ Page({
      * 页面的初始数据
      */
     data: {
+        current: 'tab0',
+        tabs: [
+            {
+        		key: 'tab0',
+        		title: 'Tab 1',
+        		content: 'Content of tab 1',
+        	},
+        	{
+        		key: 'tab1',
+        		title: 'Tab 1',
+        		content: 'Content of tab 1',
+        	},
+        	{
+        		key: 'tab2',
+        		title: 'Tab 2',
+        		content: 'Content of tab 2',
+        	},
+        	{
+        		key: 'tab3',
+        		title: 'Tab 3',
+        		content: 'Content of tab 3',
+            },
+            {
+        		key: 'tab4',
+        		title: 'Tab 3',
+        		content: 'Content of tab 3',
+        	}
+        ],
+    },
 
+    onChange(e) {
+        console.log('onChange',e)
+        this.setData({
+            current: e.detail.key
+        })
+    },
+    toArticle(e){
+        console.log(e)
+        let articleUrl = '';
+        if(e.currentTarget.dataset.index == 1){
+            articleUrl = 'https://7072-prod-9grx0olg9c8cf232-1311076540.tcb.qcloud.la/articles/news/news1.md?sign=25393c431fbd2419159508a25d95c5e4&t=1651909381';
+        }else{
+            articleUrl = 'https://7072-prod-9grx0olg9c8cf232-1311076540.tcb.qcloud.la/articles/questions/question1.md?sign=b0b36edbacbb9dce46b0f04a521e5e61&t=1651912459';
+        }
+        
+        wx.navigateTo({
+          url: '../article/index?articleUrl='+articleUrl,
+        })
     },
 
     /**

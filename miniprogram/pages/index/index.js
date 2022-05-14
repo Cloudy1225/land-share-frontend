@@ -10,6 +10,26 @@ Page({
   data: {
     
   },
+//   address: "江苏省南京市鼓楼区汉口22号"
+//   city: "南京市"
+//   district: "鼓楼区"
+//   latitude: 32.055063
+//   longitude: 118.779441
+//   name: "南京大学(鼓楼校区)"
+//   province: "江苏省"
+  usePlugin(){
+    let plugin = requirePlugin('routePlan');
+    let key = 'FL6BZ-ON76U-ELXV4-27XN6-GN72E-XAB4R';  //使用在腾讯位置服务申请的key
+    let referer = '闲置土地信息共享';   //调用插件的app的名称
+    let endPoint = JSON.stringify({  //终点
+        'name': '江苏省南京市鼓楼区汉口22号',
+        'latitude': 32.055063,
+        'longitude': 118.779441
+    });
+    wx.navigateTo({
+        url: 'plugin://routePlan/index?navigation=1&key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
+    });
+  },
 
   /**
    * 生命周期函数--监听页面加载

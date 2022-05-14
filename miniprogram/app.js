@@ -4,7 +4,7 @@ App({
   globalData: {
     nickName: '',
     avatarUrl: '../../images/unLoginAvatar.png',
-    hasUserInfo: false,
+    telenumber: '',
     role: '0' // 用户角色，初始值为0，后面改为1或2
   },  
   async onLaunch() {
@@ -32,7 +32,7 @@ App({
         console.log('获取缓存成功', res.data);   
         this.globalData.nickName = res.data.nickName,
         this.globalData.avatarUrl = res.data.avatarUrl,
-        this.globalData.hasUserInfo = true,
+        this.globalData.telenumber = res.data.telenumber,
         this.globalData.role = res.data.role
       },
       fail:(err)=>{
@@ -75,5 +75,8 @@ App({
         throw new Error(`微信云托管调用失败${error}`)
       }
     }
-  }
+  },
+
+  // 引入`towxml3.0`解析方法
+  towxml: require('/towxml/index')
 })

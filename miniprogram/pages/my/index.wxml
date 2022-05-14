@@ -1,31 +1,30 @@
 <!--pages/my/index.wxml-->
 <view class="my">
-
     <view class="view1">
         <wux-wing-blank size="large">
         <wux-row>
             <wux-col span="3">
                 <wux-image wux-class="image" shape="circle" src=
-                "{{ userInfo.avatarUrl }}"  bindtap="login" wx:if="{{role=='0'}}">
+                "{{ avatarUrl }}"  bindtap="login" wx:if="{{role=='0'}}">
                 </wux-image>
                 <wux-image wux-class="image" shape="circle" src=
-                "{{ userInfo.avatarUrl }}"  bindtap="navigateToPage" data-page="realName" wx:else>
+                "{{ avatarUrl }}"  bindtap="navigateToPage" data-page="setting" wx:else>
                 </wux-image>
             </wux-col>
             <wux-col push= "0" span="8">
-                <view class="rightAvatar" bindtap="login" wx:if="{{role==0}}">
+                <view class="rightAvatar" bindtap="login" wx:if="{{role=='0'}}">
                     <view class="nickName">点此登录</view>
                     <view class="underNickName">登录更精彩</view>
                 </view>
                 <view class="rightAvatar" wx:else>
                     <view class="nickName" bindtap="navigateToPage" data-page="setting">
-                    {{ userInfo.nickName }}
+                    {{ nickName }}
                     </view>
                     <view class="underNickName" bindtap="navigateToPage" data-page="realName"
                     wx:if="{{role=='1'}}">
                      去实名享更多功能
                     </view>
-                    <view class="underNickName" bindtap="navigateToPage" data-page="realName" wx:else>
+                    <view class="underNickName" bindtap="navigateToPage" data-page="realName" wx:if="{{role=='2'}}">
                     您已实名！
                     </view>
                 </view>
@@ -64,29 +63,29 @@
                 thumb="../../images/landPost.png"
                 title="我要发地"
                 is-link
-                url="/pages/landPost/index"
-                open-type="navigateTo">
+                hasLine
+                bindtap="navigateToPage" data-page="landPost">
                 </wux-cell> 
                 <wux-cell
                 thumb="../../images/landRequire.png"
                 title="我要找地"
                 is-link
-                url="/pages/landRequire/index"
-                open-type="navigateTo">
+                hasLine
+                bindtap="navigateToPage" data-page="landRequire">
                 </wux-cell> 
                 <wux-cell
                 thumb="../../images/landManage.png"
                 title="地源管理"
                 is-link
-                url="/pages/landManage/index"
-                open-type="navigateTo">
+                hasLine
+                bindtap="navigateToPage" data-page="landManage">
                 </wux-cell> 
                 <wux-cell
                 thumb="../../images/requireManage.png"
                 title="需求管理"
                 is-link
-                url="/pages/requireManage/index"
-                open-type="navigateTo">
+                hasLine
+                bindtap="navigateToPage" data-page="requireManage">
                 </wux-cell>
             </wux-cell-group>
         </wux-wing-blank>
@@ -100,13 +99,14 @@
                 thumb="../../images/realName.png"
                 title="实名认证"
                 is-link
-                url="/pages/realName/index"
-                open-type="navigateTo">
+                hasLine
+                bindtap="navigateToPage" data-page="realName">
                 </wux-cell>
                 <wux-cell
                 thumb="../../images/contactService.png"
                 title="联系客服"
                 is-link
+                hasLine
                 open-type="contact"
                 bind:contact="onContact">
                 </wux-cell>
@@ -114,23 +114,22 @@
                 thumb="../../images/helpCenter.png"
                 title="帮助中心"
                 is-link
-                url="/pages/helpCenter/index"
-                open-type="navigateTo">
+                hasLine
+                bindtap="navigateToPage" data-page="helpCenter">
                 </wux-cell>
                 <wux-cell
                 thumb="../../images/aboutUs.png"
                 title="关于我们"
                 is-link
-                url="/pages/aboutUs/index"
-                open-type="navigateTo">
+                hasLine
+                bindtap="navigateToPage" data-page="aboutUs">
                 </wux-cell>
                 <wux-cell
                 thumb="../../images/setting.png"
                 title="设置"
                 is-link
-                url="/pages/setting/index"
-                open-type="redirectTo"
-                >
+                hasLine
+                bindtap="navigateToPage" data-page="setting">
                 </wux-cell>
             </wux-cell-group>
         </wux-wing-blank>

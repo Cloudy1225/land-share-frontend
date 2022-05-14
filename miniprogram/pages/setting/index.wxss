@@ -1,5 +1,4 @@
 /* pages/setting/index.wxss */
-/* pages/my/index.wxss */
 @import '../../wuxui-lib/styles/index.wxss';
 
 .view1 {
@@ -7,25 +6,6 @@
 }
 
 
-
-
-.rightAvatar {
-    margin-top: 30rpx;
-    margin-left: 10rpx;
-}
-
-.nickName {
-    
-    color: white;
-    font-size: 19px;
-    
-}
-
-.underNickName {
-    margin-top: 5px;
-    color: lightgray;
-    font-size: 13px;
-}
 
 .image {
     width: 100% !important;
