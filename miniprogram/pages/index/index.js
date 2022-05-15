@@ -30,6 +30,12 @@ Page({
         url: 'plugin://routePlan/index?navigation=1&key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
     });
   },
+  toLandPage(){
+    wx.navigateTo({
+        url:'../landPage/landPage'
+    });
+
+  },
 
   /**
    * 生命周期函数--监听页面加载

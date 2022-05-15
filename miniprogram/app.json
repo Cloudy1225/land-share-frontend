@@ -16,6 +16,7 @@
         "pages/aboutUs/index",
         "pages/setting/index",
         "pages/article/index",
+        "pages/landPage/landPage",
         "pages/landDetail/index"
     ],
     "tabBar": {

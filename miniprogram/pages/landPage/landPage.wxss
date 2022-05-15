@@ -1,0 +1,96 @@
+@import '../../wuxui-lib/styles/index.wxss';
+@import '../../wuxui-lib/notice-bar/index.wxss';
+@import '../../component/list/list.wxss';
+@import '../../wuxui-lib/tag/index.wxss';
+@import '../../wuxui-lib/card/index.wxss';
+.exp{
+    width: 100%;
+
+}
+.carousel
+{
+    padding: 10px 0;
+}
+.carousel .swiper{
+    height: 230px;
+    bottom: 1px;
+}
+.tags{
+display: inline;
+float: left;
+
+}
+.name{
+    height: 130;
+    width: 100%;
+    background-color: rgb(65, 236, 241);
+
+}
+.carousel .swiper-item{
+    width: 95%;
+    margin-left: 20rpx;
+    margin-right:20rpx;
+}
+.carousel .image{
+    background-color: white;
+    height: 200px;
+    width: 100%;
+    display :block;
+    border-radius: 2px;
+}a
+.tag{
+    position: absolute;
+    display: flex;
+    background-color: bisque;
+
+}
+.icon{
+    height: 80rpx;
+    width: 80rpx;
+    right: 10px;
+    float: right;
+}
+.shoucang{
+    height: 50px;
+    width: 50px;
+}
+.tip{
+    position: absolute;
+    bottom: 0;
+    left: 10;
+    height: 30px;
+    width: 95%;
+    font-size: 30rpx;
+    z-index: 1000000;
+    background-color: white;
+    border-bottom-left-radius:4px ;
+    border-bottom-right-radius:4px ;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.notice-bar {
+    background-color: #33cd5f !important;
+    color: #fff !important;
+}
+.cell-ft{
+    color: rgba(17, 5, 5, 0.205);
+}
+.head{
+    color: aqua;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    top:5px;
+    box-sizing: border-box;
+    width: 750rpx;
+    height: auto;
+    padding: 0 40rpx;
+    font-size: 32rpx;
+    line-height: 50rpx;
+    background-color:#d9d9d9;
+}

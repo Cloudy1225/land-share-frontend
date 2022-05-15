@@ -1,0 +1,49 @@
+<!--pages/landPage.wxml-->
+<import src="../../component/list/list.wxml"/>
+        <wux-notice-bar loop Speed="100">
+            线上土地交易有风险，请注意土地相关信息核实和个人信息保护
+        </wux-notice-bar>
+<scroll-view scroll-y=" body " style="height:1500px;">
+<view class="carousel">
+    <swiper class="swiper" circular autoplay="{{true}}"indicator-dots indicator-color ="#ccc" indicator-active-color="#fff">
+    <swiper-item wx:for="{{items}}" wx:key="taskId" class="swipe-item">
+    <view class="swiper-item" binftap = "tapItem" data-index="{{index}}" data-task-id="{{item._id}}">
+        <image class="swiper-item" src="{{item.image}}" mode="aspectFill"></image>
+        
+    </view>
+    </swiper-item>
+    </swiper>
+    
+            <wux-card title="{{title}}" extra="待交易">
+                <view slot="body"> 
+                <view wx:for="{{tags}}" wx:key="{{item}}" class="tags" >
+                    <wux-tag color="#f{{item._id*10}}">{{item.tag}}</wux-tag>
+                </view>
+                    
+                    <image wx:if="{{collect==false}}" class="icon" bindtap="collect" src="../../images/collect_off.png"> 
+                    </image>
+                    <image wx:if="{{collect==true}}" class="icon" bindtap="collect" src="../../images/collect_on.png"> 
+                    </image>
+                    <image  class="icon" bindtap="phoneCall" src="../../images/telephone.png"> 
+                    </image>
+                </view>
+                
+
+            </wux-card>
+        
+            <view class="tag">
+                
+
+            </view>  
+        
+    <template is="list" data="{{cells: cells}}"/>
+    <wux-wing-blank >
+    <view class="description">
+        <view class="cell-bd">描述</view>
+        <view class="cell-ft">{{description}}</view>
+    </view>
+    </wux-wing-blank>
+   
+</view>
+
+</scroll-view>
