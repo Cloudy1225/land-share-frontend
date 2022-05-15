@@ -179,11 +179,13 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: async function (options) {
+      this.setData({
+        avatarUrl: app.globalData.avatarUrl,
+        nickName: app.globalData.nickName,
+        role: app.globalData.role,
+      })
       const res = await this.getRealName();
       this.setData({
-          avatarUrl: app.globalData.avatarUrl,
-          nickName: app.globalData.nickName,
-          role: app.globalData.role,
           usernameInput: res.username,
           IDnumberInput: res.idnumber,
           phonenumberInput: res.telenumber

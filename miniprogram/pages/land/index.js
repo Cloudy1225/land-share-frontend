@@ -1,7 +1,9 @@
 // pages/land/index.js
 import districts from '../../data/districts'
 const app = getApp();
-Date.prototype.Format = function (fmt) { // author: meizz
+
+// 时间格式化
+Date.prototype.Format = function (fmt) {
     var o = {
         "M+": this.getMonth() + 1, // 月份
         "d+": this.getDate(), // 日
@@ -273,11 +275,11 @@ Page({
             method: 'POST',
             data: data
         })
-        return this.parseRes(res)
+        // return this.parseRes(res)
+        return this.changeSubmitTime(res)
     },
 
-    // 解析响应结果
-    parseRes(res){
+    changeSubmitTime(res){
         var newlandDetails = res.result
         const len = newlandDetails.length
         if(len == 0){
@@ -295,26 +297,51 @@ Page({
                 submitTime:  newTime
             })
         }
-        for(var i = 0; i < len; i++){
-            var adInfo = newlandDetails[i].adInfo.replaceAll('/', '')
-            if(adInfo == ''){
-                adInfo = newlandDetails[i].address
-            }
-            var landType = newlandDetails[i].landType.replaceAll('/', '')
-            var title = adInfo+newlandDetails[i].area+'亩'+landType+newlandDetails[i].transferType
-            newlandDetails[i].title = title
-            newlandDetails[i].adInfo = adInfo
-            var defaultPicture = '../../images/unloginAvatar.png'
-            if(newlandDetails[i].pictureFileID!=null && newlandDetails[i].pictureFileID!=''){
-                // console.log(newlandDetails[i].pictureFileID.split('|'))
-                defaultPicture = newlandDetails[i].pictureFileID.split('|')[0]
-            }
-            // console.log("1111", defaultPicture)
-            newlandDetails[i].defaultPicture = defaultPicture
-        }
-        // console.log(newlandDetails)
-        return newlandDetails
+        // console.log("newLandDetails", newlandDetails)
+        return newlandDetails;
     },
+
+    // 解析响应结果
+    // parseRes(res){
+    //     var newlandDetails = res.result
+    //     const len = newlandDetails.length
+    //     if(len == 0){
+    //         console.log("没有更多了")
+    //         wx.showToast({
+    //             title: '没有更多了',
+    //             icon: 'none',
+    //             duration: 2000
+    //         })
+    //     }
+    //     if(len >= 1){
+    //         const newTime = newlandDetails[len-1].submitTime
+    //         if(this.data.submitTime > newTime)
+    //         this.setData({
+    //             submitTime:  newTime
+    //         })
+    //     }
+    //     for(var i = 0; i < len; i++){
+    //         const district = newlandDetails[i].adInfo
+    //         var adInfo = district.replaceAll('/', '')
+    //         if(adInfo == ''){
+    //             adInfo = newlandDetails[i].address
+    //         }
+    //         var landType = newlandDetails[i].landType.replaceAll('/', '')
+    //         var title = adInfo+newlandDetails[i].area+'亩'+landType+newlandDetails[i].transferType
+    //         newlandDetails[i].title = title
+    //         newlandDetails[i].adInfo = adInfo
+    //         newlandDetails[i].district = district
+    //         var defaultPicture = '../../images/unloginAvatar.png'
+    //         if(newlandDetails[i].pictureFileID!=null && newlandDetails[i].pictureFileID!=''){
+    //             // console.log(newlandDetails[i].pictureFileID.split('|'))
+    //             defaultPicture = newlandDetails[i].pictureFileID.split('|')[0]
+    //         }
+    //         // console.log("1111", defaultPicture)
+    //         newlandDetails[i].defaultPicture = defaultPicture
+    //     }
+    //     // console.log(newlandDetails)
+    //     return newlandDetails
+    // },
 
 
     // 根据筛选条件刷新土地列表
