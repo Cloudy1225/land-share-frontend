@@ -1,34 +1,28 @@
-<!--pages/information/index.wxml-->
-
+<!-- pages/information/index.wxml -->
 <view class="page">
     <view class="page__bd">
-        <wux-tabs defaultCurrent="tab0" theme="positive" bindchange="onChange" >
-            <wux-tab key="tab0" title="全部"></wux-tab>
-            <wux-tab key="tab1" title="土地政策"></wux-tab>
-            <wux-tab key="tab2" title="土地新闻"></wux-tab>
-            <wux-tab key="tab3" title="土地问答"></wux-tab>
-            <wux-tab key="tab4" title="参考案例"></wux-tab>
+        <wux-tabs defaultCurrent="all" theme="positive" bindchange="onChange">
+            <wux-tab key="all" title="全部"></wux-tab>
+            <wux-tab key="policy" title="土地政策"></wux-tab>
+            <wux-tab key="news" title="土地新闻"></wux-tab>
+            <wux-tab key="question" title="土地问答"></wux-tab>
+            <wux-tab key="reference" title="参考案例"></wux-tab>
         </wux-tabs>
         <!-- <view class="right-item" wx:if="{{current=='tab1'}}">tab-bd01</view>  
         <view class="right-item" wx:if="{{current=='tab2'}}">tab-bd02</view>  
         <view class="right-item" wx:if="{{current=='tab3'}}">tab-bd03</view>  
-        <view class="right-item" wx:if="{{current=='tab4'}}">tab-bd04</view>   -->
+        <view class="right-item" wx:if="{{current=='tab4'}}">tab-bd04</view> -->
         <!-- <wux-button block type="positive" bind:click="toArticle" data-index='2' wx:if="{{current=='tab2'}}">土地新闻1</wux-button>
         <wux-button block type="positive" bind:click="toArticle" data-index='3' wx:if="{{current=='tab3'}}">土地问答1</wux-button> -->
-        <wux-white-space size="small" wx:if="{{current=='tab2'||current=='tab0'}}"/>
+        <wux-white-space size="small" />
         <wux-wing-blank size="default">
-            <wux-card capture-bind:tap="toArticle" data-index='1' wx:if="{{current=='tab2'||current=='tab0'}}">
-                <view slot="body" >盘活闲置土地，京郊这个村村民集体创收逾千万元 </view>
-                <view slot="footer">土地政策</view>
+            <view class="artcard" wx:for="{{ articleDetails }}" wx:key="index" data-index="{{index}}" bindtap="toArticle">
+            <wux-card  hover-class="cell_active" >
+                <view slot="body">{{item.title}}</view>
+                <view slot="footer">{{item.type}}</view>
             </wux-card>
+            <wux-white-space size="small" />
+        </view>
         </wux-wing-blank>
-        <wux-white-space size="small" wx:if="{{current=='tab3'||current=='tab0'}}"/>
-        <wux-wing-blank size="default">
-            <wux-card capture-bind:tap="toArticle" data-index='1' wx:if="{{current=='tab3'||current=='tab0'}}">
-                <view slot="body" >流转耕地可做什么用途？种树合法吗？ </view>
-                <view slot="footer">土地问答</view>
-            </wux-card>
-        </wux-wing-blank>
-        
     </view>
 </view>
