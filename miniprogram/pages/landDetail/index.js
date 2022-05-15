@@ -12,7 +12,8 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-        // console.log('landDetail', JSON.parse(options.landDetail))
+        console.log(options.landDetail)
+        console.log('landDetail', JSON.parse(options.landDetail))
         this.setData({
             landDetail: JSON.parse(options.landDetail)
         })

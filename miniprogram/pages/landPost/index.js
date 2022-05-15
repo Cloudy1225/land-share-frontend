@@ -440,7 +440,7 @@ Page({
         try{
             const location = chooseLocation.getLocation(); // 如果点击确认选点按钮，则返回选点结果对象，否则返回null
             
-            console.log("111",location)
+            console.log("定位结果",location)
             this.setData({
                 address: location.address,
                 longtitude: location.longitude,

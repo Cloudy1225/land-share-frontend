@@ -184,7 +184,7 @@ Page({
                 role: app.globalData.role
             }
         )
-        console.log("avatarUrl", this.data.avatarUrl)
+        // console.log("avatarUrl", this.data.avatarUrl)
         
     },
 
