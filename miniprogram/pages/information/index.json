@@ -1,3 +1,11 @@
 {
-  "usingComponents": {}
+    "navigationBarTitleText": "资讯",
+    "usingComponents": {
+      "wux-tabs": "../../wuxui-lib/tabs/index",
+      "wux-tab": "../../wuxui-lib/tab/index",
+      "wux-badge": "../../wuxui-lib/badge/index",
+      "wux-card": "../../wuxui-lib/card/index",
+      "wux-wing-blank": "../../wuxui-lib/wing-blank/index",
+      "wux-white-space": "../../wuxui-lib/white-space/index"
+    }
 }

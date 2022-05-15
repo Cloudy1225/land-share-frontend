@@ -1,4 +1,28 @@
-<!--pages/information/index.wxml-->
-<text>pages/information/index.wxml</text>
-<wux-button block type="positive" bind:click="toArticle" data-index='1'>土地新闻1</wux-button>
-<wux-button block type="positive" bind:click="toArticle" data-index='2'>土地问答1</wux-button>
+<!-- pages/information/index.wxml -->
+<view class="page">
+    <view class="page__bd">
+        <wux-tabs defaultCurrent="all" theme="positive" bindchange="onChange">
+            <wux-tab key="all" title="全部"></wux-tab>
+            <wux-tab key="policy" title="土地政策"></wux-tab>
+            <wux-tab key="news" title="土地新闻"></wux-tab>
+            <wux-tab key="question" title="土地问答"></wux-tab>
+            <wux-tab key="reference" title="参考案例"></wux-tab>
+        </wux-tabs>
+        <!-- <view class="right-item" wx:if="{{current=='tab1'}}">tab-bd01</view>  
+        <view class="right-item" wx:if="{{current=='tab2'}}">tab-bd02</view>  
+        <view class="right-item" wx:if="{{current=='tab3'}}">tab-bd03</view>  
+        <view class="right-item" wx:if="{{current=='tab4'}}">tab-bd04</view> -->
+        <!-- <wux-button block type="positive" bind:click="toArticle" data-index='2' wx:if="{{current=='tab2'}}">土地新闻1</wux-button>
+        <wux-button block type="positive" bind:click="toArticle" data-index='3' wx:if="{{current=='tab3'}}">土地问答1</wux-button> -->
+        <wux-white-space size="small" />
+        <wux-wing-blank size="default">
+            <view class="artcard" wx:for="{{ articleDetails }}" wx:key="index" data-index="{{index}}" bindtap="toArticle">
+            <wux-card  hover-class="cell_active" >
+                <view slot="body">{{item.title}}</view>
+                <view slot="footer">{{item.type}}</view>
+            </wux-card>
+            <wux-white-space size="small" />
+        </view>
+        </wux-wing-blank>
+    </view>
+</view>

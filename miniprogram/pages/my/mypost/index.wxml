@@ -1,0 +1,21 @@
+<!--pages/my/mypost/index.wxml-->
+<view class="my">
+    <view class="login">
+        <wux-row>
+            <wux-col span="3">
+                <wux-image wux-class="image1" shape="circle" src=
+                "{{ userInfo.length!=0?userInfo.avatarUrl:defaultAvatar }}">
+                </wux-image>
+            </wux-col>
+            <wux-col span="4" wx:if="{{!hasUserInfo}}" wux-class="b1" >
+                <wux-button block type="balanced" bind:click="login">
+                    点击登录
+                </wux-button>
+            </wux-col>
+            <wux-col span="9" wx:else class= "niname" >
+                {{ userInfo.nickName }}
+            </wux-col>
+
+         </wux-row>
+    </view>
+</view>
