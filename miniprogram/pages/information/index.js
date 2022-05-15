@@ -187,7 +187,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        this.getTabBar().init(); // 加载底部导航栏
+
     },
 
     /**
