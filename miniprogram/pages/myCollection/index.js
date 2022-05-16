@@ -1,4 +1,4 @@
-// pages/land/index.js
+// pages/myCollection/index.js
 const app = getApp();
 
 // 时间格式化
