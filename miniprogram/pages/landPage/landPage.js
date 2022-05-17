@@ -25,15 +25,16 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    async onLoad() {
+    async onLoad(options) {
 
         const data = '{"lid":42,"landType":"耕地/荒地","transferType":"合作","area":123,"transferTime":2,"price":23,"address":"江苏省南京市玄武区北京东路41号","longtitude":118.79647,"latitude":32.05838,"adInfo":"江苏省南京市玄武区","description":"12","pictureFileID":"cloud://prod-9grx0olg9c8cf232.7072-prod-9grx0olg9c8cf232-1311076540/landPost/land/0Utzl46PXoJS48904236c7ef3ef249786aa2b23bdb2a.png|cloud://prod-9grx0olg9c8cf232.7072-prod-9grx0olg9c8cf232-1311076540/landPost/land/bOr4Rz7Bkk4ae7f34db74e7f75b44f4e7dbab48ff8dd.png","videoFileID":null,"telenumber":"18355442634","status":0,"openid":"ob7d15cPOmz6_y8WAViPMAslKS4g","submitTime":"2022-05-11 23:22:51","title":"江苏省南京市玄武区123亩耕地荒地合作","defaultPicture":"cloud://prod-9grx0olg9c8cf232.7072-prod-9grx0olg9c8cf232-1311076540/landPost/land/0Utzl46PXoJS48904236c7ef3ef249786aa2b23bdb2a.png","district": "江苏省/南京市/玄武区/"}'
     
         // console.log('lsjuhsjfjd', JSON.parse(options.landDetail))
-        const landDetail = JSON.parse(data)
+        const landDetail = JSON.parse(options.landDetail)
+        //JSON.parse(data)
        // console.log("11111", landDetail)
         this.setData({
-            landDetail: landDetail
+            landDetail: JSON.parse(options.landDetail)
         })
        var that=this
        var cells = [[]]
@@ -44,6 +45,7 @@ Page({
        cells[0].push({title:'流转年限', text:that.data.landDetail.transferTime, access: false, fn: ''})
        cells[0].push({title:'联系方式', text:that.data.landDetail.telenumber, access: false, fn: ''})
        cells[0].push({title:'价格(亩/年/元)', text:that.data.landDetail.price, access: false, fn: ''})
+       
        //cell 用于把数据展示到列表中，
        //
        that.setData({

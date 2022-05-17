@@ -14,7 +14,7 @@
     </swiper-item>
     </swiper>
     
-            <wux-card title="{{title}}" extra="待交易">
+            <wux-card title="{{landDetail.title}}" extra="待交易">
                 <view slot="body"> 
                 <view wx:for="{{tags}}" wx:key="{{item}}" class="tags" >
                     <wux-tag color="#f{{item._id*10}}">{{item.tag}}</wux-tag>

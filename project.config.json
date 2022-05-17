@@ -3,7 +3,7 @@
     "cloudfunctionRoot": "cloudfunctions/",
     "setting": {
         "urlCheck": true,
-        "es6": true,
+        "es6": false,
         "enhance": true,
         "postcss": true,
         "preloadBackgroundData": false,
@@ -21,14 +21,12 @@
         "compileHotReLoad": false,
         "lazyloadPlaceholderEnable": false,
         "useMultiFrameRuntime": true,
-        "useApiHook": true,
-        "useApiHostProcess": true,
         "babelSetting": {
             "ignore": [],
             "disablePlugins": [],
             "outputPath": ""
         },
-        "useIsolateContext": false,
+        "useIsolateContext": true,
         "userConfirmedBundleSwitch": false,
         "packNpmManually": false,
         "packNpmRelationList": [],
@@ -40,16 +38,9 @@
         "ignoreUploadUnusedFiles": true,
         "useStaticServer": true
     },
-    "appid": "wxda77377c3638f7ec",
-    "projectname": "land-share-frontend",
-    "libVersion": "2.23.4",
     "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
     "compileType": "miniprogram",
     "srcMiniprogramRoot": "miniprogram/",
-    "packOptions": {
-        "ignore": [],
-        "include": []
-    },
     "editorSetting": {
         "tabIndent": "insertSpaces",
         "tabSize": 4
@@ -77,5 +68,11 @@
                 }
             ]
         }
-    }
+    },
+    "libVersion": "2.24.1",
+    "packOptions": {
+        "ignore": [],
+        "include": []
+    },
+    "appid": "wxda77377c3638f7ec"
 }
