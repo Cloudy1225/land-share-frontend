@@ -28,6 +28,8 @@ Page({
      */
     data: {
 
+        // searchText: "",
+
         district: '全部地区',
         districtCode: [''],
         rotated1: '',
@@ -141,6 +143,32 @@ Page({
         landDetails: []
         
     },
+
+    // 跳转搜索页面
+    toSearchPage(){
+        wx.navigateTo({
+          url: '../searchPage/index',
+        })
+    },
+
+    // // 用户输入搜索内容
+    // changeSearch(e){
+    //     console.log("22", e.detail.value)
+    //     this.setData({
+    //         searchText: e.detail.value,
+    //     })
+    // },
+
+    // async search(){
+    //     console.log("111",this.data.searchText)
+    //     const res = await app.callContainer({
+    //         path: 'landPost/searchLandPosts',
+    //         method: 'POST',
+    //         data: {
+    //             "input": this.data.searchText
+    //         }
+    //     })
+    // },
 
     // 选择地区
     openDistricts() {

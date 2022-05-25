@@ -1,3 +1,14 @@
 <!--index.wxml-->
+<view class="search-bar">
+    <view class="search-bar__form" bindtap="toSearchPage">
+        <label class="search-bar__label" wx:if="{{ !inputFocus && !inputValue }}" bindtap="onClick">
+            <icon class="search-bar__icon" type="search" color="#B2B2B2" size="14" />
+            <text class="search-bar__text">请输入关键词</text>
+        </label>
+    </view>
+</view>
+
 哟，编译成功了
 <wux-button block type="positive" bind:click="usePlugin">去这里</wux-button>
+
+

@@ -1,0 +1,37 @@
+<!--pages/searchPage/index.wxml-->
+<view class="searchPage">
+    <wux-search-bar maxlength="20" focus showCancel placeholder="输关键字搜索" bind:change="changeSearch" bind:confirm="toSearchLands1" />
+
+    <view class="normalBgView">
+        <view class="hotSearchBgView">
+            <view class="hotSearchTitleView">
+                <view class="hotSearchTitle">热门搜索</view>
+            </view>
+            <view class="hotSearchTagBgView">
+                <view class="hotSearchTag" wx:for="{{hotSearchArr}}" wx:key="index" bindtap='toSearchLands3' data-i='{{index}}'>{{item}}</view>
+            </view>
+        </view>
+
+
+        <view class="hotSearchBgView">
+            <view class="hotSearchTitleView">
+                <view class="hotSearchTitle">搜索历史</view>
+                <wux-icon slot="header" size="20" 
+                type="md-trash" bindtap="clearHistories"
+                        style="margin-right: 10rpx; color: gray;" />
+            </view>         
+        </view>
+        <wux-cell-group >
+            <wux-swipe-action autoClose 
+            right="{{ right }}" wx:for="{{searchHistoryArr}}" wx:key="index" data="{{ index }}" bind:click="deleteThisHistory"> 
+                    <wux-cell title="{{item}}" hasLine data-i="{{ index }}" bind:click="toSearchLands2" >
+                        <wux-icon slot="header" size="20" type="ios-search" 
+                        style="margin-right: 10rpx; color: gray;"  />
+                    </wux-cell>
+            </wux-swipe-action>
+        </wux-cell-group>
+    </view>
+
+    
+
+</view>

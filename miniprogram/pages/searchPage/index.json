@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "搜索",
+    "usingComponents": {
+        "wux-swipe-action-group": "../../wuxui-lib/swipe-action-group/index",
+        "wux-swipe-action": "../../wuxui-lib/swipe-action/index"
+    }
+}

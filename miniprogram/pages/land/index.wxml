@@ -7,7 +7,14 @@ value="{{ transferTypeCode }}" cols="1" bind:confirm="confirmTransferType" bind:
 
 
 <view class="page">
-    <wux-search-bar clear placeholder="输入土地类型" maxlength="8" />
+    <view class="search-bar">
+        <view class="search-bar__form" bindtap="toSearchPage">
+            <label class="search-bar__label" wx:if="{{ !inputFocus && !inputValue }}" bindtap="onClick">
+                <icon class="search-bar__icon" type="search" color="#B2B2B2" size="14" />
+                <text class="search-bar__text">请输入关键词</text>
+            </label>
+        </view>
+    </view>
     <wux-row>
         <wux-col span="4">
             <wux-button class="filteritem" wux-class="button" hoverClass="none"

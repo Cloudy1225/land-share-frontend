@@ -10,6 +10,13 @@ Page({
   data: {
     
   },
+  
+  toSearchPage(){
+      wx.navigateTo({
+        url: '../searchPage/index',
+      })
+  },
+
 //   address: "江苏省南京市鼓楼区汉口22号"
 //   city: "南京市"
 //   district: "鼓楼区"
