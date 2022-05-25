@@ -56,7 +56,6 @@ value="{{ transferTypeCode }}" cols="1" bind:confirm="confirmTransferType" bind:
                         <wux-tag class="media-box__tag__meta" color="blue">
                             {{ item.transferType }}
                         </wux-tag>
-                       
                     </view>
                     <view class="media-box__info">
                         <view class="media-box__info__meta">{{ item.area }}亩</view>

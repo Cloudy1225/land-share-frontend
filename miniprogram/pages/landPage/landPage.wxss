@@ -44,6 +44,10 @@ float: left;
     background-color: bisque;
 
 }
+.time{
+    white-space:normal;
+    position: absolute;
+}
 .icon{
     height: 80rpx;
     width: 80rpx;

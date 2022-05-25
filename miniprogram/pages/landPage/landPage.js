@@ -13,14 +13,8 @@ Page({
         tagColor:[],
         collect:false,
         description:"在这个多姿多彩的世界中，有许多值得敬佩的人，但是，我最敬佩的人还是我们班的班主任张老师。我们班张老师是一位对同学们都非常温柔的男老师，他在地理、历史、数学、语文样样精通。但在其中最好的还是数学，老师用教了十年书，得来的知识给我们总结了我们书上没有的结论与方法，是我们的数学成绩也比以前好了。他也非常重视我们上课的认真听讲习惯。",
-        items:[{
-            image:"cloud://prod-9grx0olg9c8cf232.7072-prod-9grx0olg9c8cf232-1311076540/articles/questions/question1Picture1.jpg"
-            ,
-            _id:"1",
-        },{image:"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Flmg.jj20.com%2Fup%2Fallimg%2F1113%2F062520105434%2F200625105434-12-1200.jpg&refer=http%3A%2F%2Flmg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1654526592&t=38a32b0f6037f473db85dc7ca317a6a8"
-        ,
-        _id:"2",},
-        {image:"../../images/fengshouse.png",_id:"3",}]  
+        items:[
+            "../../images/fengshouse.png"]  
     },
     /**
      * 生命周期函数--监听页面加载
@@ -49,31 +43,30 @@ Page({
        //cell 用于把数据展示到列表中，
        //
        that.setData({
+        tags:[{tag:"最新",_id:"1"},{tag:that.data.landDetail.landType,_id:"5"},{tag:that.data.landDetail.transferType,_id:"8"}],
         cells: cells,
         description:landDetail.description
       })
             const res= await this.iscollected();
-     
+          const pictureurls=landDetail.pictureFileID;
+          var pictures=pictureurls.split("|");
+          if(pictureurls!=""){
+            that.setData(
+                {
+                    items:pictures
+                }
+            )}
+ //           console.log("sdasd",pictures)
           const isCollected = res
-          console.log("11e31",res)
-          that.setData(
+
+                 that.setData(
               {
+                  
                   collect: isCollected
               }
           )
-          console.log("111",this.data.collect)
-      
-    //   res.then(
-    //       (e)=>
-    //       {
-    //           console.log(e)
-    //           that.setData(
-    //               {
-    //                 collect:e
-    //               }
-    //           )
-    //         }
-    //   )
+          //console.log("111",this.data.collect)
+
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
@@ -111,12 +104,11 @@ Page({
             else{
                 wx.showToast({
                     title: '收藏失败',
+                    image: '../../images/wrong.png'
                 })
 
             }
         }
-
-       
     },
     async iscollected() {
         const lid = this.data.landDetail.lid;

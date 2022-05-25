@@ -7,19 +7,18 @@
 <view class="carousel">
     <swiper class="swiper" circular autoplay="{{true}}"indicator-dots indicator-color ="#ccc" indicator-active-color="#fff">
     <swiper-item wx:for="{{items}}" wx:key="taskId" class="swipe-item">
-    <view class="swiper-item" binftap = "tapItem" data-index="{{index}}" data-task-id="{{item._id}}">
-        <image class="swiper-item" src="{{item.image}}" mode="aspectFill"></image>
-        
-    </view>
+
+        <image class="swiper-item" src="{{item}}" mode="aspectFill"></image>
+
     </swiper-item>
     </swiper>
     
-            <wux-card title="{{landDetail.title}}" extra="待交易">
+            <wux-card title="{{landDetail.title}}" extra="{{landDetail.transferTime}}天前">
                 <view slot="body"> 
                 <view wx:for="{{tags}}" wx:key="{{item}}" class="tags" >
                     <wux-tag color="#f{{item._id*10}}">{{item.tag}}</wux-tag>
-                </view>
-                    
+               
+                </view> 
                     <image wx:if="{{collect==false}}" class="icon" bindtap="collect" src="../../images/collect_off.png"> 
                     </image>
                     <image wx:if="{{collect==true}}" class="icon" bindtap="collect" src="../../images/collect_on.png"> 
@@ -27,6 +26,7 @@
                     <image  class="icon" bindtap="phoneCall" src="../../images/telephone.png"> 
                     </image>
                 </view>
+                
                 
 
             </wux-card>
