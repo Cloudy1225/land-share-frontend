@@ -18,6 +18,7 @@
         "pages/article/index",
         "pages/landPage/landPage",
         "pages/landDetail/index"
+        ,"pages/message/message"
     ],
     "tabBar": {
         "custom": true,

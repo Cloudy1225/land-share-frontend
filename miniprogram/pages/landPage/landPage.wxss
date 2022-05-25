@@ -54,6 +54,12 @@ float: left;
     right: 10px;
     float: right;
 }
+.icongps{
+    height: 70rpx;
+    width: 70rpx;
+    right: 12px;
+    float: right;
+}
 .shoucang{
     height: 50px;
     width: 50px;
@@ -71,30 +77,42 @@ float: left;
     border-bottom-right-radius:4px ;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-
 }
 .notice-bar {
     background-color: #33cd5f !important;
     color: #fff !important;
-}
-.cell-ft{
-    color: rgba(17, 5, 5, 0.205);
 }
 .head{
     color: aqua;
 }
 
 .description {
+    border-style: outset;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
     top:5px;
     box-sizing: border-box;
-    width: 750rpx;
+    widows: 100%;
     height: auto;
     padding: 0 40rpx;
     font-size: 32rpx;
     line-height: 50rpx;
-    background-color:#d9d9d9;
+    background-color:#fefff9;
+}
+.wocao{
+font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC", Verdana, Arial, '微软雅黑','宋体';
+font-size: 14px;
+text-align: left;
+margin: 5px 0 0 0;
+line-height: 150%;
+box-sizing: border-box;
+display: block;
+margin-top: 10px;
+margin-bottom: 10px;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 16px;
+background-color: #fff;
 }

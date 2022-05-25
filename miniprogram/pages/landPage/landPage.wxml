@@ -19,12 +19,16 @@
                     <wux-tag color="#f{{item._id*10}}">{{item.tag}}</wux-tag>
                
                 </view> 
+                
                     <image wx:if="{{collect==false}}" class="icon" bindtap="collect" src="../../images/collect_off.png"> 
                     </image>
                     <image wx:if="{{collect==true}}" class="icon" bindtap="collect" src="../../images/collect_on.png"> 
                     </image>
                     <image  class="icon" bindtap="phoneCall" src="../../images/telephone.png"> 
                     </image>
+                    <image  class="icongps" bindtap="gps" src="../../images/gps.png"> 
+                    </image>
+
                 </view>
                 
                 
@@ -37,12 +41,17 @@
             </view>  
         
     <template is="list" data="{{cells: cells}}"/>
-    <wux-wing-blank >
-    <view class="description">
+
+    <wux-wing-blank size="small" style="margin-top: 5px;">
+    <view class="wocao" >
         <view class="cell-bd">描述</view>
         <view class="cell-ft">{{description}}</view>
     </view>
     </wux-wing-blank>
+    
+    <wux-button bindtap="chatwith">联系地主</wux-button>
+    <map style="width: 100%; height: 200px;" latitude="{{landDetail.latitude}}" longitude="{{landDetail.longtitude}}" markers="{{markers}}">
+	</map>
    
 </view>
 

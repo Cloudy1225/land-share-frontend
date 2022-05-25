@@ -65,7 +65,7 @@ page {
 }
 
 .cell-ft{
-    color: rgba(17, 5, 5, 0.205);
+    color: rgb(11,11,11)
 }
 
 .cell-access .cell-ft {

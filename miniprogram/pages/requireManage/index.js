@@ -1,4 +1,4 @@
-// pages/requireManage/index.js
+// pages/myMessage/index.js
 Page({
 
     /**
