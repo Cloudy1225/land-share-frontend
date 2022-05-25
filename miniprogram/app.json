@@ -16,7 +16,9 @@
         "pages/aboutUs/index",
         "pages/setting/index",
         "pages/article/index",
-        "pages/landDetail/index"
+        "pages/landDetail/index",
+        "pages/searchPage/index",
+        "pages/searchLands/index"
     ],
     "tabBar": {
         "custom": true,
