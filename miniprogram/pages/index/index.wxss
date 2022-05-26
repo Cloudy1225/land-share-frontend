@@ -116,6 +116,18 @@
     display: none;
 }
 
+.media-box__title {
+    font-weight: 400;
+    font-size: 17px;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
 .media-box__desc {
     color: #999;
     font-size: 13px;
