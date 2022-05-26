@@ -1,14 +1,71 @@
 <!--index.wxml-->
-<view class="search-bar">
-    <view class="search-bar__form" bindtap="toSearchPage">
-        <label class="search-bar__label" wx:if="{{ !inputFocus && !inputValue }}" bindtap="onClick">
-            <icon class="search-bar__icon" type="search" color="#B2B2B2" size="14" />
-            <text class="search-bar__text">请输入关键词</text>
-        </label>
+<view class="index">
+    <view class="search-bar">
+        <view class="search-bar__form" bindtap="navigateToPage" data-page="searchPage">
+            <label class="search-bar__label" wx:if="{{ !inputFocus && !inputValue }}" bindtap="onClick">
+                <icon class="search-bar__icon" type="search" color="#B2B2B2" size="14" />
+                <text class="search-bar__text">请输入关键词</text>
+            </label>
+        </view>
     </view>
+
+    <wux-grids square bordered="{{ false }}" col="4">
+        <wux-grid  bindtap="navigateToPage" data-page="landPost">
+            <wux-icon type="ios-share" color="#0081ff" />
+            <wux-white-space size="small" />
+            <view>发布土地</view>
+        </wux-grid>
+        <wux-grid  bindtap="navigateToPage" data-page="landRequire">
+            <wux-icon type="ios-paper-plane" color="#0081ff" />
+            <wux-white-space size="small" />
+            <view>发布需求</view>
+        </wux-grid>
+        <wux-grid  bindtap="navigateToPage" data-page="unitConversion">
+            <wux-icon type="ios-speedometer" color="#0081ff" />
+            <wux-white-space size="small" />
+            <view>单位换算</view>
+        </wux-grid>
+        <wux-grid  bindtap="toMiniProgram">
+            <wux-icon type="ios-podium" color="#0081ff" />
+            <wux-white-space size="small" />
+            <view>面积测量</view>
+        </wux-grid>
+    </wux-grids>
+
+
+    <view class="title">猜你想找</view>
+    <view class="panel panel_access" catchtouchmove="{{ opened ? 'noop' : '' }}">
+        <view class="panel__bd">
+            <view class="media-box media-box_appmsg" hover-class="cell_active" wx:for="{{ landDetails }}" wx:key="index" data-index="{{ index }}" bindtap="toLandDetailPage">
+                <view class="media-box__hd media-box__hd_in-appmsg">
+                    <image class="media-box__thumb" src="{{ item.defaultPicture }}" />
+                </view>
+                <view class="media-box__bd media-box__bd_in-appmsg">
+                    <view class="media-box__title">{{ item.title }}</view>
+                    <wux-white-space size="default" />
+                    <view class="media-box__desc">{{ item.description }}</view>
+                    <wux-white-space size="default" />
+                    
+                    <view class="media-box__tag">
+                        <wux-tag class="media-box__tag__meta" color="green">
+                            {{ item.landType }}
+                        </wux-tag>
+                        <wux-tag class="media-box__tag__meta" color="blue">
+                            {{ item.transferType }}
+                        </wux-tag>
+                    </view>
+                    <view class="media-box__info">
+                        <view class="media-box__info__meta">{{ item.area }}亩</view>
+                        <view class="media-box__info__meta">{{ item.transferTime }}年</view>
+                        <view class="media-box__info__meta">{{ item.price }}元/亩/年</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <wux-white-space size="large" />
+    <wux-white-space size="large" />
+    <wux-white-space size="large" />
+    <wux-white-space size="small" />
 </view>
-
-哟，编译成功了
-<wux-button block type="positive" bind:click="usePlugin">去这里</wux-button>
-
-

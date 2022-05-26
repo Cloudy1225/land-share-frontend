@@ -36,7 +36,6 @@ value="{{ transferTypeCode }}" cols="1" bind:confirm="confirmTransferType" bind:
                 {{transferType}}
                 <view class="wux-accordion__{{rotated3}}arrow"></view>
             </wux-button>
-            
         </wux-col>
     </wux-row>
 
@@ -63,7 +62,6 @@ value="{{ transferTypeCode }}" cols="1" bind:confirm="confirmTransferType" bind:
                         <wux-tag class="media-box__tag__meta" color="blue">
                             {{ item.transferType }}
                         </wux-tag>
-                       
                     </view>
                     <view class="media-box__info">
                         <view class="media-box__info__meta">{{ item.area }}亩</view>

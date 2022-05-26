@@ -1,4 +1,4 @@
-<view class="wux-class {{ classes.wrap }}" hover-class="{{ classes.hover }}" style="width: {{ width }}" bindtap="onTap">
+<view class="wux-class {{ classes.wrap }}" hover-stay-time="150" hover-class="{{ classes.hover }}" style="width: {{ width }}" bindtap="onTap">
     <view class="{{ classes.content }}">
         <view class="{{ classes.inner }}">
             <view class="{{ classes.hd }}">
