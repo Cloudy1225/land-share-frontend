@@ -1,0 +1,87 @@
+<!--pages/unitConversion/index.wxml-->
+<view class="unitConversion">
+
+
+    <wux-tabs theme="positive" defaultCurrent="tab1" bind:change="changeWhich">
+        <wux-tab key="tab1">
+            <text class="tabTitle">面积换算</text>
+        </wux-tab>
+        <wux-tab key="tab2">
+            <text class="tabTitle">长度换算</text>
+        </wux-tab>
+    </wux-tabs>
+
+    <view class="area" wx:if="{{which}}">
+        <view class="input">
+            <wux-popup-select value="{{ curAreaUnit1 }}" options="{{ areaUnits }}" data-index="0" bind:confirm="confirmAreaUnit">
+                <wux-cell class="unitCell" title="{{ curAreaTitle1 }}" is-link>
+                    <text class="text" style="color: #387ef5;" slot="footer">{{curArea1}}</text>
+                </wux-cell>
+            </wux-popup-select>
+        </view>
+        <view class="input">
+            <wux-popup-select value="{{ curAreaUnit2 }}" options="{{ areaUnits }}" data-index="1" bind:confirm="confirmAreaUnit">
+                <wux-cell class="unitCell" title="{{ curAreaTitle2 }}" is-link>
+                    <text class="text" style="color: black;" slot="footer">{{curArea2}}</text>
+                </wux-cell>
+            </wux-popup-select>
+        </view>
+    </view> 
+    
+    <view class="length" wx:else>
+        <view class="input">
+            <wux-popup-select value="{{ curLengthUnit1 }}" options="{{ lengthUnits }}" data-index="0" bind:confirm="confirmLengthUnit">
+                <wux-cell class="unitCell" title="{{ curLengthTitle1 }}" is-link>
+                    <text class="text" style="color: #387ef5;" slot="footer">{{curLength1}}</text>
+                </wux-cell>
+            </wux-popup-select>
+        </view>
+        <view class="input">
+            <wux-popup-select value="{{ curLengthUnit2 }}" options="{{ lengthUnits }}" data-index="1" bind:confirm="confirmLengthUnit">
+                <wux-cell class="unitCell" title="{{ curLengthTitle2 }}" is-link>
+                    <text class="text" style="color: black;" slot="footer">{{curLength2}}</text>
+                </wux-cell>
+            </wux-popup-select>
+        </view>
+    </view> 
+
+    
+    <wux-grids class="keyboards" square col="4">
+        <wux-grid class="keyboard" data-bit="1" bindtap="onChange">
+        1
+        </wux-grid>
+        <wux-grid class="keyboard" data-bit="2" bindtap="onChange">
+        2
+        </wux-grid>
+        <wux-grid class="keyboard" data-bit="3" bindtap="onChange">
+        3
+        </wux-grid>
+        <wux-grid class="keyboard" data-bit="x" bindtap="onChange">
+            <wux-icon color="#404040" type="ios-backspace"></wux-icon>
+        </wux-grid>
+        <wux-grid class="keyboard" data-bit="4" bindtap="onChange">
+        4
+        </wux-grid>
+        <wux-grid class="keyboard" data-bit="5" bindtap="onChange">
+        5
+        </wux-grid>
+        <wux-grid class="keyboard" data-bit="6" bindtap="onChange"> 
+        6
+        </wux-grid>
+        <wux-grid class="keyboard" data-bit="." bindtap="onChange">
+        .
+        </wux-grid>
+        <wux-grid class="keyboard" data-bit="7" bindtap="onChange">
+        7
+        </wux-grid>
+        <wux-grid class="keyboard" data-bit="8" bindtap="onChange">
+        8
+        </wux-grid>
+        <wux-grid class="keyboard" data-bit="9" bindtap="onChange">
+        9
+        </wux-grid>
+        <wux-grid class="keyboard" data-bit="0" bindtap="onChange">
+        0
+        </wux-grid>
+    </wux-grids>
+</view>

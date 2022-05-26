@@ -18,7 +18,8 @@
         "pages/article/index",
         "pages/landDetail/index",
         "pages/searchPage/index",
-        "pages/searchLands/index"
+        "pages/searchLands/index",
+        "pages/unitConversion/index"
     ],
     "tabBar": {
         "custom": true,
@@ -72,6 +73,8 @@
         "wux-image": "wuxui-lib/image/index",
         "wux-cell-group": "wuxui-lib/cell-group/index",
         "wux-cell": "wuxui-lib/cell/index",
+        "wux-grids": "wuxui-lib/grids/index",
+        "wux-grid": "wuxui-lib/grid/index",
         "wux-textarea": "wuxui-lib/textarea/index",
         "wux-upload": "wuxui-lib/upload/index",
         "wux-white-space": "wuxui-lib/white-space/index",
@@ -79,6 +82,9 @@
         "wux-input": "wuxui-lib/input/index",
         "wux-custom-upload": "wuxui-lib/custom-upload/index",
         "wux-tag": "wuxui-lib/tag/index",
-        "wux-search-bar": "wuxui-lib/search-bar/index"
+        "wux-search-bar": "wuxui-lib/search-bar/index",
+        "wux-radio-group": "wuxui-lib/radio-group/index",
+        "wux-radio": "wuxui-lib/radio/index",
+        "wux-animation-group": "wuxui-lib/animation-group/index"
     }
 }

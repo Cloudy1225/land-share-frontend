@@ -1,0 +1,41 @@
+/* pages/unitConversion/index.wxss */
+
+page {
+    background-color: white;
+}
+
+.tabTitle {
+    font-size: large;
+}
+
+
+
+.input {
+    margin-top: 20%;
+}
+
+.unitCell .wux-cell__text {
+    font-size: 50rpx;
+}
+
+.unChecked .wux-cell__text {
+    color: black;
+}
+
+.isChecked .wux-cell__text {
+    color: #387ef5;
+}
+
+.text {
+    font-size: 50rpx;
+}
+
+.keyboards {
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+}
+
+.keyboard {
+    font-size: 60rpx;
+}

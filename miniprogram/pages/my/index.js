@@ -53,7 +53,7 @@ Page({
     },
 
     // 跳转到指定页面
-    navigateToPage: (event) => {
+    navigateToPage(event) {
         console.log(event)
         const pageName = event.currentTarget.dataset.page;
         const path = '../'+pageName+'/index';
@@ -61,14 +61,13 @@ Page({
         || pageName == 'landPost' || pageName == 'landRequire' || pageName == 'landManage'
         || pageName == 'requireManage';
         const onlyNeedLogin = pageName == 'myCollection' || pageName == 'realName';
-        const thisPage = getCurrentPages().pop()
         if(onlyNeedLogin && app.globalData.role == '0'){
-            thisPage.showLoginModal();
+            this.showLoginModal();
         }else if(needLoginAndRealName){
             if(app.globalData.role == '0'){
-                thisPage.showLoginModal();
+                this.showLoginModal();
             }else if(app.globalData.role == '1'){
-                thisPage.showRealNameModal();
+                this.showRealNameModal();
             }else{
                 wx.navigateTo({
                     url: path
