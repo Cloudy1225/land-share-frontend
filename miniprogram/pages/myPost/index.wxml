@@ -1,5 +1,10 @@
 <!--pages/myPost/index.wxml-->
-<view class = "page">
+<view class="emptyPage" wx:if="{{ isEmpty }}">
+    <image class="emptyImage" src="../../images/empty.png"></image>
+    <view class="emptyText">没有更多了</view>
+</view>
+
+<view class = "page" wx:else>
     <view class="panel panel_access" catchtouchmove="{{ opened ? 'noop' : '' }}">
         <view class="panel__bd">
             <view class="media-box media-box_appmsg" hover-class="cell_active" wx:for="{{ landDetails }}" wx:key="index" data-index="{{ index }}" bindtap="toLandDetailPage">
@@ -32,8 +37,8 @@
     </view>
    
     <!-- <wux-button block type="positive" bind:click="getLands"> get土地</wux-button> -->
+    <!-- <wux-white-space size="large" />
     <wux-white-space size="large" />
     <wux-white-space size="large" />
-    <wux-white-space size="large" />
-    <wux-white-space size="small" />
+    <wux-white-space size="small" /> -->
 </view>

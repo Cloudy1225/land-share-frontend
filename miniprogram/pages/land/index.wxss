@@ -138,6 +138,20 @@
     color: #387ef5
 }
 
+.emptyPage {
+    height: 100%;
+    margin-top: 30%;
+    text-align: center;
+}
+.emptyPage .emptyImage {
+    width: 120px;
+    height: 120px;
+}
+.emptyPage .emptyText {
+    color: gray;
+    font-size: 20px;
+}
+
 .panel {
     /* background-color: #FFF; */
     position: relative;

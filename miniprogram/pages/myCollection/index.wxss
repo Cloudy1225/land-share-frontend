@@ -1,12 +1,26 @@
 /* pages/myCollection/index.wxss */
-
+.emptyPage {
+    height: 100%;
+    margin-top: 30%;
+    text-align: center;
+}
+.emptyPage .emptyImage {
+    width: 120px;
+    height: 120px;
+}
+.emptyPage .emptyText {
+    color: gray;
+    font-size: 20px;
+}
 
 .panel {
-    /* background-color: #FFF; */
     position: relative;
     overflow: hidden;
 }
 
+.panel:first-child {
+    margin-top: 0;
+}
 
 .panel__hd {
     padding: 14px 15px 10px;
@@ -15,7 +29,7 @@
     position: relative;
 }
 
-/* .panel__hd::after {
+.panel__hd::after {
     content: " ";
     position: absolute;
     left: 0;
@@ -25,7 +39,7 @@
     border-bottom: 1rpx solid #E5E5E5;
     color: #E5E5E5;
     left: 15px;
-} */
+}
 
 .media-box {
     padding: 15px;
@@ -33,22 +47,10 @@
     background-color: white;
     border: 3rpx solid #E5E5E5;
     border-radius: 5px;
-    margin-top: 10rpx;
+    margin-bottom: 10rpx;
     margin-left: 10rpx;
     margin-right: 10rpx;
 }
-
-/* .media-box::before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    height: 1px;
-    border-top: 1rpx solid #E5E5E5;
-    color: #E5E5E5;
-    left: 15px;
-} */
 
 .media-box:first-child::before {
     display: none;
@@ -74,7 +76,7 @@
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
 }
 
 .media-box__info {
@@ -111,6 +113,7 @@
 }
 
 .media-box__thumb {
+    border-radius: 5px;
     width: 100%;
     height: 100%;
     vertical-align: top;
@@ -118,8 +121,8 @@
 
 .media-box__hd_in-appmsg {
     margin-right: .8em;
-    width: 120px;
-    height: 120px;
+    width: 105px;
+    height: 105px;
     line-height: 60px;
     text-align: center;
 }
@@ -134,4 +137,3 @@
 .media-box_small-appmsg {
     padding: 0;
 }
-

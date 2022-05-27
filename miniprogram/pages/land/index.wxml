@@ -42,8 +42,12 @@ value="{{ transferTypeCode }}" cols="1" bind:confirm="confirmTransferType" bind:
     <!--
     <wux-filterbar items="{{ sorts }}" bind:change="changeSorts" bind:open="onOpen" bind:close="onClose"/>
     -->
+    <view class="emptyPage" wx:if="{{ isEmpty }}">
+        <image class="emptyImage" src="../../images/empty.png"></image>
+        <view class="emptyText">没有更多了</view>
+    </view>
 
-    <view class="panel panel_access" catchtouchmove="{{ opened ? 'noop' : '' }}">
+    <view class="panel panel_access" catchtouchmove="{{ opened ? 'noop' : '' }}" wx:else>
         <view class="panel__bd">
             <view class="media-box media-box_appmsg" hover-class="cell_active" wx:for="{{ landDetails }}" wx:key="index" data-index="{{ index }}" bindtap="toLandDetailPage">
                 <view class="media-box__hd media-box__hd_in-appmsg">

@@ -28,6 +28,8 @@ Page({
      */
     data: {
 
+        isEmpty: false, // 页面是否为空
+
         // searchText: "",
 
         district: '全部地区',
@@ -310,14 +312,14 @@ Page({
     changeSubmitTime(res){
         var newlandDetails = res.result
         const len = newlandDetails.length
-        if(len == 0){
-            console.log("没有更多了")
-            wx.showToast({
-                title: '没有更多了',
-                icon: 'none',
-                duration: 2000
-            })
-        }
+        // if(len == 0){
+        //     console.log("没有更多了")
+        //     wx.showToast({
+        //         title: '没有更多了',
+        //         icon: 'none',
+        //         duration: 2000
+        //     })
+        // }
         if(len >= 1){
             const newTime = newlandDetails[len-1].submitTime
             if(this.data.submitTime > newTime)
@@ -382,12 +384,29 @@ Page({
         this.setData({
             landDetails: newLandDetails
         })
+        if(this.data.landDetails == null || this.data.landDetails.length == 0){
+            this.setData({
+                isEmpty: true
+            })
+        }else {
+            this.setData({
+                isEmpty: false
+            })
+        }
         console.log("after refreshLands", this.data.landDetails)
     },
 
     // 往土地列表中加土地
     async addLands(){
         const newLandDetails = await this.getLands();
+        const len = newlandDetails.length
+        if(len == 0){
+            wx.showToast({
+                title: '没有更多了',
+                icon: 'none',
+                duration: 2000
+            })
+        }
         var landDetails = this.data.landDetails
         landDetails.push.apply(landDetails, newLandDetails)
         this.setData({

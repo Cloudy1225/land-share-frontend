@@ -1,2 +1,5 @@
 <!--pages/requireManage/index.wxml-->
-<text>pages/requireManage/index.wxml</text>
+<view class="emptyPage">
+    <image class="emptyImage" src="../../images/empty.png"></image>
+    <view class="emptyText">没有更多了</view>
+</view>
