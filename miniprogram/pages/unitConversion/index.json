@@ -1,7 +1,5 @@
 {
     "usingComponents": {
-        "wux-popup-select": "../../wuxui-lib/popup-select/index",
-        "wux-tabs": "../../wuxui-lib/tabs/index",
-        "wux-tab": "../../wuxui-lib/tab/index"
+        "wux-popup-select": "../../wuxui-lib/popup-select/index"
     }
 }

@@ -32,7 +32,6 @@
         </wux-grid>
     </wux-grids>
 
-
     <view class="title">猜你想找</view>
     <view class="panel panel_access" catchtouchmove="{{ opened ? 'noop' : '' }}">
         <view class="panel__bd">

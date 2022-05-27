@@ -54,7 +54,7 @@
             "provider": "wx76a9a06e5b4e693e"
         },
         "routePlan": {
-            "version": "1.0.18",
+            "version": "1.0.19",
             "provider": "wx50b5593e81dd937a"
         }
     },
@@ -68,6 +68,8 @@
     "usingComponents": {
         "wux-icon": "wuxui-lib/icon/index",
         "wux-button": "wuxui-lib/button/index",
+        "wux-tabs": "wuxui-lib/tabs/index",
+        "wux-tab": "wuxui-lib/tab/index",
         "wux-row": "wuxui-lib/row/index",
         "wux-col": "wuxui-lib/col/index",
         "wux-image": "wuxui-lib/image/index",

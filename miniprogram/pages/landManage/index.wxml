@@ -1,2 +1,55 @@
 <!--pages/landManage/index.wxml-->
-<text>pages/landManage/index.wxml</text>
+<view class="landManage">
+
+    <wux-tabs theme="positive" defaultCurrent="all" bind:change="onChange">
+        <wux-tab key="all">
+            <text class="tabTitle">全部</text>
+        </wux-tab>
+        <wux-tab key="pass">
+            <text class="tabTitle">审核通过</text>
+        </wux-tab>
+        <wux-tab key="wait">
+            <text class="tabTitle">待审核</text>
+        </wux-tab>
+        <wux-tab key="fail">
+            <text class="tabTitle">未通过</text>
+        </wux-tab>
+    </wux-tabs>
+
+    <view class="emptyPage" wx:if="{{ isEmpty }}">
+        <image class="emptyImage" src="../../images/empty.png"></image>
+        <view class="emptyText">没有更多了</view>
+    </view>
+
+    <view class="panel panel_access" catchtouchmove="{{ opened ? 'noop' : '' }}" wx:else>
+        <view class="panel__bd">
+            <view class="media-box media-box_appmsg" hover-class="cell_active" wx:for="{{ curLandDetails }}" wx:key="index" data-index="{{ index }}" bindtap="toLandDetailPage">
+                <view class="media-box__hd media-box__hd_in-appmsg">
+                    <image class="media-box__thumb" src="{{ item.defaultPicture }}" />
+                </view>
+                <view class="media-box__bd media-box__bd_in-appmsg">
+                    <view class="media-box__title">{{ item.title }}</view>
+                    <wux-white-space size="default" />
+                    <view class="media-box__desc">{{ item.description }}</view>
+                    <wux-white-space size="default" />
+                    
+                    <view class="media-box__tag">
+                        <wux-tag class="media-box__tag__meta" color="green">
+                            {{ item.landType }}
+                        </wux-tag>
+                        <wux-tag class="media-box__tag__meta" color="blue">
+                            {{ item.transferType }}
+                        </wux-tag>
+                       
+                    </view>
+                    <view class="media-box__info">
+                        <view class="media-box__info__meta">{{ item.area }}亩</view>
+                        <view class="media-box__info__meta">{{ item.transferTime }}年</view>
+                        <view class="media-box__info__meta">{{ item.price }}元/亩/年</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>

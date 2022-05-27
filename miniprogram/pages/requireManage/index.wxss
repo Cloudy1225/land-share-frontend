@@ -1,1 +1,14 @@
 /* pages/requireManage/index.wxss */
+.emptyPage {
+    height: 100%;
+    margin-top: 30%;
+    text-align: center;
+}
+.emptyPage .emptyImage {
+    width: 120px;
+    height: 120px;
+}
+.emptyPage .emptyText {
+    color: gray;
+    font-size: 20px;
+}

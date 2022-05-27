@@ -1,3 +1,4 @@
 {
-  "usingComponents": {}
+    "navigationBarTitleText": "地源管理",
+    "usingComponents": {}
 }
