@@ -1,0 +1,11 @@
+{
+    
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "wux-notice-bar": "../../wuxui-lib/notice-bar/index",
+        "wux-tag": "../../wuxui-lib/tag/index",
+        "wux-card":"../../wuxui-lib/card/index",
+        "wux-wing-blank": "../../wuxui-lib/wing-blank/index"
+    }
+
+}

@@ -91,6 +91,15 @@ Page({
         })
     }
   },  
+  toLandDetailPage(e){
+    // console.log("eeee", e)
+    const i = e.currentTarget.dataset.index;
+    const landDetail = JSON.stringify(this.data.landDetails[i])
+    // console.log(landDetail)
+    wx.navigateTo({
+        url: '../landPage/landPage?landDetail='+landDetail,
+      })
+},
 
   toMiniProgram() {
     wx.navigateToMiniProgram({
