@@ -1,1 +1,34 @@
 /* pages/landRequire/index.wxss */
+
+.wux-cascader .wux-cascader__menu--active {
+    color: #387ef5
+}
+.wux-cascader .wux-cascader__item--active {
+    color: #387ef5
+}
+
+.picker{
+    display: block;
+}
+.picker .wux-cell__bd {
+    margin-left: 0;
+    margin-right: 10rpx;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 210rpx;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    flex: unset;
+}
+.picked .wux-cell__ft {
+    color: black;
+}
+
+.badge .wux-cell__bd::after {
+    content: "*";
+    color: red;
+    position: absolute;
+    left: 160rpx;
+    top: 28rpx;
+}
