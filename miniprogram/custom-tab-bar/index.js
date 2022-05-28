@@ -24,6 +24,11 @@ Component({
                 key: '/pages/land/index'
             },
             {
+                icon: 'ios-map',
+                text: '需求',
+                key: '/pages/require/index'
+            },
+            {
                 icon: 'ios-information-circle',
                 text: '资讯',
                 key: '/pages/information/index',
