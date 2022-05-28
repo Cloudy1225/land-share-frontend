@@ -250,7 +250,7 @@ Page({
         if(that.isCompleted()){
             wx.showModal({
                 title: '确认提交？',
-                content: '确保信息真实完整后再点击确定提交',
+                content: '确保您的需求信息真实完整后再点击确定提交',
                 confirmColor: "#387ef5",
                 success: function(res){
                     if(res.confirm){
@@ -377,10 +377,6 @@ Page({
 
         if(!this.data.isSubmitted){
             // 页面卸载时从云托管中删除已上传文件
-            let landPicturesFileIDs = this.data.landPictures.map(x => {return x.res.fileID});
-            let landVideoFileID = this.data.landVideo.map(x => {return x.res.fileID});
-            let landWarrantsFileIDs = this.data.landWarrants.map(x => {return x.res.fileID});
-            const files = landPicturesFileIDs.concat(landVideoFileID, landWarrantsFileIDs);
             console.log(files)
             wx.cloud.deleteFile({
                 fileList: files, // 文件唯一标识符 cloudID, 可通过上传文件接口获取

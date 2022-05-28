@@ -145,6 +145,7 @@ Page({
         landDetails: []
         
     },
+   
 
     // 跳转搜索页面
     toSearchPage(){
@@ -332,48 +333,6 @@ Page({
         return newlandDetails;
     },
 
-    // 解析响应结果
-    // parseRes(res){
-    //     var newlandDetails = res.result
-    //     const len = newlandDetails.length
-    //     if(len == 0){
-    //         console.log("没有更多了")
-    //         wx.showToast({
-    //             title: '没有更多了',
-    //             icon: 'none',
-    //             duration: 2000
-    //         })
-    //     }
-    //     if(len >= 1){
-    //         const newTime = newlandDetails[len-1].submitTime
-    //         if(this.data.submitTime > newTime)
-    //         this.setData({
-    //             submitTime:  newTime
-    //         })
-    //     }
-    //     for(var i = 0; i < len; i++){
-    //         const district = newlandDetails[i].adInfo
-    //         var adInfo = district.replaceAll('/', '')
-    //         if(adInfo == ''){
-    //             adInfo = newlandDetails[i].address
-    //         }
-    //         var landType = newlandDetails[i].landType.replaceAll('/', '')
-    //         var title = adInfo+newlandDetails[i].area+'亩'+landType+newlandDetails[i].transferType
-    //         newlandDetails[i].title = title
-    //         newlandDetails[i].adInfo = adInfo
-    //         newlandDetails[i].district = district
-    //         var defaultPicture = '../../images/unloginAvatar.png'
-    //         if(newlandDetails[i].pictureFileID!=null && newlandDetails[i].pictureFileID!=''){
-    //             // console.log(newlandDetails[i].pictureFileID.split('|'))
-    //             defaultPicture = newlandDetails[i].pictureFileID.split('|')[0]
-    //         }
-    //         // console.log("1111", defaultPicture)
-    //         newlandDetails[i].defaultPicture = defaultPicture
-    //     }
-    //     // console.log(newlandDetails)
-    //     return newlandDetails
-    // },
-
 
     // 根据筛选条件刷新土地列表
     async refreshLands(){
@@ -421,9 +380,9 @@ Page({
         // console.log("eeee", e)
         const i = e.currentTarget.dataset.index;
         const landDetail = JSON.stringify(this.data.landDetails[i])
-        // console.log(landDetail)
+         console.log(landDetail)
         wx.navigateTo({
-            url: '../landPage/landPage?landDetail='+landDetail,
+            url: '../../pages/requireDetail/index?landDetail='+landDetail,
           })
     },
 

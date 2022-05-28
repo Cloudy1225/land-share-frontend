@@ -22,7 +22,8 @@
         "pages/searchLands/index",
         "pages/unitConversion/index",
         "pages/require/index",
-        "pages/requireList/index"
+        "pages/requireList/index",
+        "pages/requireDetail/index"
     ],
     "tabBar": {
         "custom": true,
@@ -45,7 +46,6 @@
             {
                 "pagePath": "pages/my/index"
             }
-
         ]
     },
     "window": {
