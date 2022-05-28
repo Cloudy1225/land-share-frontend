@@ -41,18 +41,19 @@
             </view>  
         
     <template is="list" data="{{cells: cells}}"/>
-
-    <wux-wing-blank size="small" style="margin-top: 5px;">
-    <view class="wocao" >
-        <view class="cell-bd">描述</view>
-        <view class="cell-ft">{{description}}</view>
-    </view>
-    </wux-wing-blank>
+    <wux-cell-group>
+    <wux-cell title="描述">
+        {{description}}
+    </wux-cell>
+</wux-cell-group>
     
     <wux-button bindtap="chatwith">联系地主</wux-button>
-    <map style="width: 100%; height: 200px;" latitude="{{landDetail.latitude}}" longitude="{{landDetail.longtitude}}" markers="{{markers}}">
-	</map>
+    <!-- <map style="width: 100%; height: 200px;" latitude="{{landDetail.latitude}}" longitude="{{landDetail.longtitude}}" markers="{{markers}}">
+	</map> -->
    
 </view>
+
+<view>guess you like</view>
+
 
 </scroll-view>

@@ -183,15 +183,7 @@ Page({
   },
 
   // 跳转土地详情页面
-  toLandDetailPage(e){
-    // console.log("eeee", e)
-    const i = e.currentTarget.dataset.index;
-    const landDetail = JSON.stringify(this.data.landDetails[i])
-    // console.log(landDetail)
-    wx.navigateTo({
-        url: '../landDetail/index?landDetail='+landDetail,
-      })
-  },
+
 
   /**
    * 生命周期函数--监听页面加载
