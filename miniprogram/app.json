@@ -20,7 +20,8 @@
         "pages/landDetail/index",
         "pages/searchPage/index",
         "pages/searchLands/index",
-        "pages/unitConversion/index"
+        "pages/unitConversion/index",
+        "pages/require/index"
     ],
     "tabBar": {
         "custom": true,
@@ -33,6 +34,9 @@
             },
             {
                 "pagePath": "pages/land/index"
+            },
+            {
+                "pagePath": "pages/require/index"
             },
             {
                 "pagePath": "pages/information/index"
