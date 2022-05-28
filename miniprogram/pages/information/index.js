@@ -52,7 +52,7 @@ Page({
         		content: 'Content of tab 4',
         	}
         ],
-        submitTime: '',
+        submitTime: new Date().Format("yyyy-MM-dd HH:mm:ss"),
         articleDetails: []
     },
 
@@ -70,7 +70,7 @@ Page({
     async getAticles(){
         var time = this.data.submitTime
         time = time.substr(0,10)
-        
+        console.log(time)
         var type = this.data.current
         if(type == 'all')
             var currentPath = '?time='+time
@@ -92,9 +92,9 @@ Page({
         console.log(this.res)
         const len = newArticleDetails.length
         if(len == 0){
-            console.log('没有新的文章')
+            console.log('没有更多了')
             wx.showToast({
-                title: '没有新的文章',
+                title: '没有更多了',
                 icon: 'none',
                 duration: 2000
             })
@@ -128,9 +128,9 @@ Page({
     // 根据筛选条件刷新文章列表
     async refreshArticles(){
         // 刷新要更新时间
-        this.setData({
-            submitTime: new Date().Format("yyyy-MM-dd HH:mm:ss")
-        })
+        // this.setData({
+        //     submitTime: new Date().Format("yyyy-MM-dd HH:mm:ss")
+        // })
         const newArticleDetails = await this.getAticles()
 
         this.setData({
@@ -142,12 +142,14 @@ Page({
     //往文章列表添加文章
     async addArticle(){
         // 刷新要更新时间
-        this.setData({
-            submitTime: new Date().Format("yyyy-MM-dd HH:mm:ss")
-        })
+        // this.setData({
+        //     submitTime: new Date().Format("yyyy-MM-dd HH:mm:ss")
+        // })
         const newArticleDetails = await this.getAticles();
+        var ArticleDetails = this.data.articleDetails
+        ArticleDetails.push.apply(ArticleDetails, newArticleDetails)
         this.setData({
-            articleDetails: newArticleDetails
+            articleDetails: ArticleDetails
         })
         console.log("after refreshArticles", this.data.ArticleDetails)
     },

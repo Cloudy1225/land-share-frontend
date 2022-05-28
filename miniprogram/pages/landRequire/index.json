@@ -1,3 +1,10 @@
 {
-  "usingComponents": {}
+
+  "navigationBarTitleText": "我要找地",
+  "usingComponents": {
+    "wux-cascader": "../../wuxui-lib/cascader/index",
+    "wux-picker": "../../wuxui-lib/picker/index",
+    "wux-notice-bar": "../../wuxui-lib/notice-bar/index",
+    "wux-toptips": "../../wuxui-lib/toptips/index"
+  }
 }

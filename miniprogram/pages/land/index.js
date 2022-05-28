@@ -422,7 +422,7 @@ Page({
         const landDetail = JSON.stringify(this.data.landDetails[i])
         // console.log(landDetail)
         wx.navigateTo({
-            url: '../landDetail/index?landDetail='+landDetail,
+            url: '../landPage/landPage?landDetail='+landDetail,
           })
     },
 

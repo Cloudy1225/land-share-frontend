@@ -15,6 +15,7 @@
         "pages/helpCenter/index",
         "pages/aboutUs/index",
         "pages/setting/index",
+        "pages/landPage/landPage",
         "pages/article/index",
         "pages/landDetail/index",
         "pages/searchPage/index",
