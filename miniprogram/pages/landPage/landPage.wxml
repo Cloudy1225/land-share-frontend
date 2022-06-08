@@ -35,7 +35,7 @@
 <view>guess you like</view>
 <view class="fixbutton">
 
-    <wux-button block type="calm"style="margin-left:10px; margin-right:10px ;margin-top:8">带我去看</wux-button>
+    <wux-button block type="calm"style="margin-left:10px; margin-right:10px ;margin-top:8"capture-bind:tap="navigator">带我去看</wux-button>
     <wux-button block type="calm" style="margin-left:10px;margin-right:10px ;margin-top:8" capture-bind:tap="collect">收藏一波</wux-button>
     <wux-icon type="ios-chatbubbles" class="icongps"> </wux-icon>
     <wux-icon type="ios-call "capture-bind:tap="phoneCall" class="icongps"> </wux-icon>
