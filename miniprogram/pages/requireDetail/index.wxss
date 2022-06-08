@@ -1,6 +1,6 @@
 @import '../../wuxui-lib/styles/index.wxss';
 @import '../../wuxui-lib/notice-bar/index.wxss';
-@import '../../component/list/list.wxss';
+@import '../../components/list/list.wxss';
 @import '../../wuxui-lib/tag/index.wxss';
 @import '../../wuxui-lib/card/index.wxss';
 .exp{

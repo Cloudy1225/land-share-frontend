@@ -1,5 +1,5 @@
 <!--pages/landPage.wxml-->
-<import src="../../component/list/list.wxml"/>
+<import src="../../components/list/list.wxml"/>
         <wux-notice-bar loop Speed="100">
             线上土地交易有风险，请注意土地相关信息核实和个人信息保护,谨防网络诈骗和违规交易行为
         </wux-notice-bar>
@@ -15,7 +15,7 @@
     
             <wux-card title="{{landDetail.title}}" extra="{{daysago}}">
                 <view slot="body"> 
-                <view wx:for="{{tags}}" wx:key="{{item}}" class="tags" >
+                <view wx:for="{{tags}}" wx:key="item" class="tags" >
                     <wux-tag color="#f{{item._id*10}}">{{item.tag}}</wux-tag>
                
                 </view> 
@@ -35,9 +35,9 @@
 <view>guess you like</view>
 <view class="fixbutton">
 
-    <wux-button block type="calm"style="margin-left:10px; margin-right:10px ;margin-top:8"capture-bind:tap="navigator">带我去看</wux-button>
+    <wux-button block type="calm"style="margin-left:10px; margin-right:10px ;margin-top:8"capture-bind:tap="routePlan">带我去看</wux-button>
     <wux-button block type="calm" style="margin-left:10px;margin-right:10px ;margin-top:8" capture-bind:tap="collect">收藏一波</wux-button>
-    <wux-icon type="ios-chatbubbles" class="icongps"> </wux-icon>
+    <wux-icon type="ios-chatbubbles" bindtap="chat" class="icongps"> </wux-icon>
     <wux-icon type="ios-call "capture-bind:tap="phoneCall" class="icongps"> </wux-icon>
 </view>
 </scroll-view>

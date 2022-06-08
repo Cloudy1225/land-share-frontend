@@ -1,7 +1,7 @@
 // index.js
 const app = getApp()
 // const { envList } = require('../../envList.js');
-
+import * as SDK from '../../static/SDK';
 // 时间格式化
 Date.prototype.Format = function (fmt) {
     var o = {
@@ -192,13 +192,14 @@ Page({
         submitTime: new Date().Format("yyyy-MM-dd HH:mm:ss")
     })
     this.addLands() // 初始时添加土地列表
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
@@ -219,7 +220,8 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+    console.log("主动断开websocket")
+    SDK.destroy();
   },
 
   /**

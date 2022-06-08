@@ -1,2 +1,12 @@
 <!--pages/myMessage/index.wxml-->
-<text>pages/myMessage/index.wxml</text>
+<!-- 这里有个加载的补丁逻辑待优化，页面向SDK请求conversationList的时候会有时延，
+造成页面的一个抖动，这里加一个if逻辑打一个补丁，后续继续优化 -->
+<view  class="container">
+ <view   class="container">
+   <view class="conversation-list-area">
+     <scroll-view class="scoll-view" scroll-y="true">
+       <TUI-conversation-item wx:for="{{conversationList}}" wx:key="index" id="{{item.conversationID}}" data-type="C2C" conversation="{{item}}" bindtap="handleRoute" bind:transCheckID="transCheckID"  charge="{{transChenckID===item.conversationID}}"></TUI-conversation-item>
+     </scroll-view>
+   </view>
+ </view>
+</view>

@@ -36,7 +36,7 @@ Page({
         })
         var date1 = new Date().getDate()
         var wodao = new Date(landDetail.submitTime)
-        const a=date1-wodao.getDate()
+        const a = wodao.getDate()- date1
        var that=this
        if(a==0){
        that.setData({

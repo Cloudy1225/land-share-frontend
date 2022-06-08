@@ -40,6 +40,13 @@ page {
   -webkit-tap-highlight-color: transparent;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
 .page__hd {
   padding: 40px;
 }

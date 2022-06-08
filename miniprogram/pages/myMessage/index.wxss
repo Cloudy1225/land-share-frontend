@@ -1,1 +1,18 @@
 /* pages/myMessage/index.wxss */
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #F4F5F9;
+  }
+  
+  .conversation-list-area {
+    position: absolute;
+    width: 100vw;
+    height: calc(100vh - 190px);
+    /* top: 176rpx; */
+  }
+  
+  .scoll-view {
+    width: 100%;
+    height: 100%;
+  }

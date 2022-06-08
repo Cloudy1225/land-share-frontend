@@ -1,0 +1,20 @@
+/* pages/chatPage/index.wxss */
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+
+  
+  
+  .message-list {
+    flex: 1;
+    width: 100vw;
+    overflow-y: scroll;
+  }
+  
+  .message-input {
+    flex-shrink: 0;
+    width: 100%;
+  }
+  

@@ -1,7 +1,9 @@
 // app.js
+import * as SDK from './static/SDK'
 App({
   // 全局变量
   globalData: {
+    openid: '',
     nickName: '',
     avatarUrl: '../../images/unLoginAvatar.png',
     telenumber: '',
@@ -22,6 +24,16 @@ App({
     }
     
     this.setUserInfo(); // 获取缓存中的用户信息
+
+    const res = await this.callContainer({
+        path: '/conversation/getMyOpenid'
+    })
+    this.globalData.openid = res.result;
+
+    wx.$Kit = SDK.create(this.globalData.openid, 'land-share-test');
+    wx.$KitEvent = SDK.EVENT;
+    wx.$KitTypes = SDK.MessageType;
+    // console.log(wx.$Kit)
   },
 
   // 从本地缓存获取用户信息，并设置

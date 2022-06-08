@@ -38,8 +38,8 @@ Page({
         })
         var date1 = new Date().getDate()
         var wodao = new Date(landDetail.submitTime)
-        const a=wodao.getDate()-date1
-        var that=this
+        const a = wodao.getDate()- date1
+       var that=this
        if(a==0){
        that.setData({
            daysago: "今天"
@@ -182,9 +182,9 @@ Page({
           fail: (res) => {},
           complete: (res) => {},
         })
-    }
-    ,
-    navigator(){
+    },
+
+    routePlan(){
         const that =this
         let plugin = requirePlugin('routePlan');
         let key = 'FL6BZ-ON76U-ELXV4-27XN6-GN72E-XAB4R';  //使用在腾讯位置服务申请的key
@@ -193,10 +193,10 @@ Page({
             'latitude': that.data.landDetail.latitude,
             'longitude':that.data.landDetail.longtitude,
             'name':'目的土地'
-});
+        });
         wx.navigateTo({
-url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
-});
+            url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
+        });
     }
     ,
     gps(){
@@ -207,11 +207,80 @@ url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=
           ,
         
         });
-    }
+    },
+
+
+    async chat() {
+        if(app.globalData.role == '0') {
+            this.showLoginModal;
+        }else if( app.globalData.role == '1') {
+            this.showRealNameModal;
+        }else {
+            const openid = this.data.landDetail.openid;
+            wx.$Kit.getUserProfile(openid).then(function(res) {
+                const nickName = res.data.nickName
+                wx.$Kit.createConversation(openid).then(function(res) {
+                    console.log("建立会话成功",res);
+                    const conversationID = res.data.conversationID;
+                    const conversationInfomation = {
+                        conversationID: conversationID,
+                        nickName: nickName,
+                        unreadCount: 0 // 这里是个bug，不一定是0
+                    }
+                    const url = `../chatPage/index?conversationInfomation=${JSON.stringify(conversationInfomation)}`;
+                    wx.navigateTo({
+                        url,
+                    });
+                })
+            })
+        }
+
+    },
+
+    // 弹出 登录 提示框
+    showLoginModal() {
+        // if(app.globalData.role == '0'){
+            const thisPage = getCurrentPages().pop()
+            wx.showModal({
+                title: '还未登录',
+                content: '登录后更精彩',
+                confirmText: '去登录',
+                cancelColor: "#5c5d5e",
+                confirmColor: "#387ef5",
+                success: function(res){
+                    if(res.confirm){
+                        wx.redirectTo({
+                          url: '../my/index',
+                        })
+                    }
+                }
+            });
+        //   }
+    },
+
+    // 弹出 实名 提示框
+    showRealNameModal() {
+        // if(app.globalData.role == '1'){
+            wx.showModal({
+                title: '尚未实名',
+                content: '实名后便可私聊',
+                confirmText: '去实名',
+                cancelColor: "#5c5d5e",
+                confirmColor: "#387ef5",
+                success: function(res){
+                    if(res.confirm){
+                        wx.navigateTo({
+                            url: '../realName/index'
+                        })
+                    }
+                }
+            });
+        // }
+    },
 
     /**
      * 生命周期函数--监听页面显示
-     */,
+     */
     onShow() {
 
     },
