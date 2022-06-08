@@ -1,5 +1,5 @@
 <!--pages/landPage.wxml-->
-<import src="../../component/list/list.wxml"/>
+<import src="../../components/list/list.wxml"/>
         <wux-notice-bar loop Speed="100">
             线上土地交易有风险，请注意土地相关信息核实和个人信息保护
         </wux-notice-bar>

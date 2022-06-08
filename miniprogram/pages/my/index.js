@@ -94,8 +94,10 @@ Page({
           // 看是否为新用户，如果是则自动注册，返回值为role
           wx.showLoading({
             title: '登录中'
-          })          
-          const res1 =  this.register(); 
+          })
+          const nickName = res.userInfo.nickName;
+          const avatarUrl = res.userInfo.avatarUrl;     
+          const res1 =  this.register(nickName, avatarUrl); 
           res1.then((result) => {
             wx.hideLoading();
             console.log(result)
@@ -141,10 +143,15 @@ Page({
      * 看是否为新用户，如果是则自动注册
      * 返回用户角色role和telenumber
      */
-    async register() {
+    async register(nickName, avatarUrl) {
       const res = await app.callContainer({
         path: '/my/loginOrRegister',
-        method: 'GET'
+        method: 'POST',
+        data: {
+            nickName: nickName,
+            avatarUrl: avatarUrl
+        }
+        
       });
       // console.log(res.result);
       return res.result;

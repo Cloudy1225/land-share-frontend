@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "TUI-message-list": "../../components/chat/message-list/index",
+        "TUI-message-input": "../../components/chat/message-input/index"
+    }
+}

@@ -21,7 +21,8 @@
         "pages/searchPage/index",
         "pages/searchLands/index",
         "pages/unitConversion/index",
-        "pages/require/index"
+        "pages/require/index",
+        "pages/chatPage/index"
     ],
     "tabBar": {
         "custom": true,

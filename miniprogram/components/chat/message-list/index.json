@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "TUI-TextMessage": "../message-elements/text-message/index",
+    "TUI-ImageMessage": "../message-elements/image-message/index",
+    "TUI-VideoMessage": "../message-elements/video-message/index",
+    "TUI-AudioMessage": "../message-elements/audio-message/index"
+  }
+}

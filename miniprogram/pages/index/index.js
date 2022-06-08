@@ -1,7 +1,7 @@
 // index.js
 const app = getApp()
 // const { envList } = require('../../envList.js');
-
+import * as SDK from '../../static/SDK.js';
 // 时间格式化
 Date.prototype.Format = function (fmt) {
     var o = {
@@ -202,6 +202,11 @@ Page({
         submitTime: new Date().Format("yyyy-MM-dd HH:mm:ss")
     })
     this.addLands() // 初始时添加土地列表
+
+    wx.$Kit = SDK.create('ob7d15cPOmz6_y8WAViPMAslKS4g', 'land-share-test');
+    wx.$KitEvent = SDK.EVENT;
+    wx.$KitTypes = SDK.MessageType;
+    console.log(wx.$KitEvent)
   },
 
   /**
@@ -229,7 +234,8 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+    console.log("主动断开websocket")
+    SDK.destroy();
   },
 
   /**
