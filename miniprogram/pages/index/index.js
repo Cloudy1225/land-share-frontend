@@ -1,7 +1,7 @@
 // index.js
 const app = getApp()
 // const { envList } = require('../../envList.js');
-import * as SDK from '../../static/SDK.js';
+import * as SDK from '../../static/SDK';
 // 时间格式化
 Date.prototype.Format = function (fmt) {
     var o = {
@@ -183,15 +183,7 @@ Page({
   },
 
   // 跳转土地详情页面
-  toLandDetailPage(e){
-    // console.log("eeee", e)
-    const i = e.currentTarget.dataset.index;
-    const landDetail = JSON.stringify(this.data.landDetails[i])
-    // console.log(landDetail)
-    wx.navigateTo({
-        url: '../landDetail/index?landDetail='+landDetail,
-      })
-  },
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -202,18 +194,14 @@ Page({
         submitTime: new Date().Format("yyyy-MM-dd HH:mm:ss")
     })
     this.addLands() // 初始时添加土地列表
-
-    wx.$Kit = SDK.create('ob7d15cPOmz6_y8WAViPMAslKS4g', 'land-share-test');
-    wx.$KitEvent = SDK.EVENT;
-    wx.$KitTypes = SDK.MessageType;
-    console.log(wx.$KitEvent)
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**

@@ -55,7 +55,6 @@ Page({
     // 获取会话列表
     getConversationList() {
         wx.$Kit.getConversationList().then((res) => {
-            console.log(res)
             this.setData({
                 conversationList: res.data
             })

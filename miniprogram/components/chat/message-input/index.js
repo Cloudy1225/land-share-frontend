@@ -56,7 +56,6 @@ Component({
               cloudPath: `chat/audio/${fileName}`, // 对象存储路径，根路径直接填文件名，文件夹例子 test/文件名，不要 / 开头
               filePath: res.tempFilePath // 微信本地文件，通过选择图片，聊天文件等接口获取
             }).then(res => {
-                console.log('语音上传结果', res)
                 const message = wx.$Kit.createMessage({
                   to: this.getToAccount(),
                   type: wx.$KitTypes.MSG_AUDIO,
@@ -188,9 +187,7 @@ Component({
       wx.chooseImage({
         sourceType: [type],
         count: 1,
-        success: (res) => {
-            console.log('chooseImage',res)
-            
+        success: (res) => {   
           if (res.tempFiles[0].size > maxSize) {
             wx.showToast({
               title: '大于20M图片不支持发送',
@@ -203,7 +200,6 @@ Component({
             cloudPath: `chat/image/${fileName}`, // 对象存储路径，根路径直接填文件名，文件夹例子 test/文件名，不要 / 开头
             filePath: res.tempFilePaths[0] // 微信本地文件，通过选择图片，聊天文件等接口获取
           }).then(res => {
-              console.log('图片上传结果', res)
               const message = wx.$Kit.createMessage({
                 to: this.getToAccount(),
                 type: wx.$KitTypes.MSG_IMAGE,
@@ -234,13 +230,11 @@ Component({
         maxDuration: 60, // 设置最长时间60s
         camera: 'back', // 后置摄像头
         success: (res) => {
-            console.log("chooseVideo", res)
               const fileName = res.tempFilePath.split("/").pop()
               wx.cloud.uploadFile({
                 cloudPath: `chat/video/${fileName}`, // 对象存储路径，根路径直接填文件名，文件夹例子 test/文件名，不要 / 开头
                 filePath: res.tempFilePath // 微信本地文件，通过选择图片，聊天文件等接口获取
               }).then(res => {
-                  console.log('视频上传结果', res)
                   const message = wx.$Kit.createMessage({
                     to: this.getToAccount(),
                     type: wx.$KitTypes.MSG_VIDEO,
@@ -260,7 +254,6 @@ Component({
       });
     },
     appendMessage(e) {
-        console.log('appendMessage', e)
       this.setData({
         message: this.data.message + e.detail.message,
         sendMessageBtn: true,
@@ -291,20 +284,17 @@ Component({
     },
 
     onInputValueChange(event) {
-        console.log('event.detail', event.detail)
       if (event.detail.message) {
         this.setData({
           message: event.detail.message.payload,
           sendMessageBtn: true,
         });
       } else if (event.detail.value!='') {
-          console.log('event.detail.valu', event.detail.value)
             this.setData({
                 message: event.detail.value,
                 sendMessageBtn: true,
             });
       }  else if (event.detail.value=='') {
-        console.log('event.detail.valu', event.detail.value)
           this.setData({
               message: event.detail.value,
               sendMessageBtn: false,

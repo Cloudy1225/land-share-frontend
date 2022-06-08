@@ -1,23 +1,15 @@
 <!--pages/landPage.wxml-->
 <import src="../../components/list/list.wxml"/>
-        <wux-notice-bar loop Speed="100">
+        <wux-notice-bar loop Speed="20">
             线上土地交易有风险，请注意土地相关信息核实和个人信息保护,谨防网络诈骗和违规交易行为
         </wux-notice-bar>
 <scroll-view scroll-y=" body " style="height:1500px;">
 <view class="carousel">
-    <swiper class="swiper" circular autoplay="{{true}}"indicator-dots indicator-color ="#ccc" indicator-active-color="#fff">
-    <swiper-item wx:for="{{items}}" wx:key="taskId" class="swipe-item">
 
-        <image class="swiper-item" src="{{item}}" mode="aspectFill"></image>
-
-    </swiper-item>
-    </swiper>
-    
             <wux-card title="{{landDetail.title}}" extra="{{daysago}}">
                 <view slot="body"> 
                 <view wx:for="{{tags}}" wx:key="{{item}}" class="tags" >
                     <wux-tag color="#f{{item._id*10}}">{{item.tag}}</wux-tag>
-               
                 </view> 
                 </view>
                 
@@ -30,14 +22,14 @@
         {{description}}
     </wux-cell>
 </wux-cell-group>
+    
+    <wux-button bindtap="chatwith">联系poster</wux-button>
+    <!-- <map style="width: 100%; height: 200px;" latitude="{{landDetail.latitude}}" longitude="{{landDetail.longtitude}}" markers="{{markers}}">
+	</map> -->
+   
 </view>
 
 <view>guess you like</view>
-<view class="fixbutton">
 
-    <wux-button block type="calm"style="margin-left:10px; margin-right:10px ;margin-top:8">带我去看</wux-button>
-    <wux-button block type="calm" style="margin-left:10px;margin-right:10px ;margin-top:8" capture-bind:tap="collect">收藏一波</wux-button>
-    <wux-icon type="ios-chatbubbles" bindtap="chat" class="icongps"> </wux-icon>
-    <wux-icon type="ios-call "capture-bind:tap="phoneCall" class="icongps"> </wux-icon>
-</view>
+
 </scroll-view>

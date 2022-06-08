@@ -336,6 +336,7 @@ let heartCheck = {
             socketTask.send({
                 data: JSON.stringify(pingData)
             })
+            console.log("ping");
             self.serverTimeoutObj = setTimeout(function(){//如果超过一定时间还没重置，说明后端主动断开了
                 socketTask.close();     //如果onclose会执行reconnect，我们执行ws.close()就行了.如果直接执行reconnect 会触发onclose导致重连两次
             }, 20000)
@@ -456,6 +457,10 @@ let onSocketMessage = function (res) {
             emitter.emit(eventName, event);
             break;
         }
+        // default: {
+        //     console.log("pong")
+        //     break
+        // }
     }
 }
 
@@ -1047,7 +1052,6 @@ let setMessageRead = function (conversationID, toOpenid) {
             }
             reject(buildCatch(error))
         })
-
     })
 }
 
@@ -1062,7 +1066,7 @@ const API = {
     'findMessage': findMessage,
     'setMessageRead': setMessageRead,
     'createConversation': createConversation,
-    'findConversation': 'findConversation',
+    'findConversation': findConversation,
     'getConversationList': getConversationList,
     'pinConversation': pinConversation,
     'deleteConversation': deleteConversation,

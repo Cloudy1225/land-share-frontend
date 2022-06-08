@@ -200,16 +200,6 @@ Page({
         console.log('onComplete上传完成', e)
         wx.hideLoading() // 关闭 loading 提示框
     },
-    // 删除云托管中的文件
-    deleteFile(e) {
-        console.log('deleteFile', e)
-        const thisFile = e.detail.file
-        wx.cloud.deleteFile({
-            fileList: [thisFile.res.fileID], // 文件唯一标识符 cloudID, 可通过上传文件接口获取
-            success: console.log,
-            fail: console.error
-        })
-    },
 
     test() {
         console.log(this.data.landTypeCode)
@@ -250,7 +240,7 @@ Page({
         if(that.isCompleted()){
             wx.showModal({
                 title: '确认提交？',
-                content: '确保信息真实完整后再点击确定提交',
+                content: '确保您的需求信息真实完整后再点击确定提交',
                 confirmColor: "#387ef5",
                 success: function(res){
                     if(res.confirm){
@@ -374,20 +364,6 @@ Page({
     onUnload: function () {
         // 页面卸载时设置插件选点数据为null，防止再次进入页面，geLocation返回的是上次选点结果
         chooseLocation.setLocation(null);
-
-        if(!this.data.isSubmitted){
-            // 页面卸载时从云托管中删除已上传文件
-            let landPicturesFileIDs = this.data.landPictures.map(x => {return x.res.fileID});
-            let landVideoFileID = this.data.landVideo.map(x => {return x.res.fileID});
-            let landWarrantsFileIDs = this.data.landWarrants.map(x => {return x.res.fileID});
-            const files = landPicturesFileIDs.concat(landVideoFileID, landWarrantsFileIDs);
-            console.log(files)
-            wx.cloud.deleteFile({
-                fileList: files, // 文件唯一标识符 cloudID, 可通过上传文件接口获取
-                success: console.log,
-                fail: console.error
-            })
-        }
     },
 
     /**

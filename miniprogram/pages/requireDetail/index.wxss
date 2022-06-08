@@ -49,8 +49,8 @@ float: left;
     position: absolute;
 }
 .icon{
-    height: 90rpx;
-    width: 90rpx;
+    height: 80rpx;
+    width: 80rpx;
     right: 10px;
     float: right;
 }
@@ -59,8 +59,6 @@ float: left;
     width: 70rpx;
     right: 12px;
     float: right;
-    margin-top: 15px;
-    margin-left: 30px;
 }
 .shoucang{
     height: 50px;
@@ -87,13 +85,34 @@ float: left;
 .head{
     color: aqua;
 }
-.fixbutton{
-    height: 60px;
-    display:inline-flex;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 999;
-    background-color: #caeff5;
-    
+
+.description {
+    border-style: outset;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    top:5px;
+    box-sizing: border-box;
+    widows: 100%;
+    height: auto;
+    padding: 0 40rpx;
+    font-size: 32rpx;
+    line-height: 50rpx;
+    background-color:#fefff9;
+}
+.wocao{
+font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC", Verdana, Arial, '微软雅黑','宋体';
+font-size: 14px;
+text-align: left;
+margin: 5px 0 0 0;
+line-height: 150%;
+box-sizing: border-box;
+display: block;
+margin-top: 10px;
+margin-bottom: 10px;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 16px;
+background-color: #fff;
 }

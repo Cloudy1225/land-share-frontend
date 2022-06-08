@@ -96,16 +96,13 @@ Component({
           });
         }
       }
-      console.log("添加监听事件")
       wx.$Kit.on(wx.$KitEvent.MESSAGE_RECEIVED, this.$onMessageReceived, this);
       wx.$Kit.on(wx.$KitEvent.MESSAGE_READ_BY_PEER, this.$onMessageReadByPeer, this);
       wx.$Kit.on(wx.$KitEvent.MESSAGE_REVOKED, this.$onMessageRevoked, this);
-      console.log("添加监听事件成功")
     },
 
     detached() {
       // 一定要解除相关的事件绑定
-      console.log("解除监听事件")
       wx.$Kit.off(wx.$KitEvent.MESSAGE_RECEIVED, this.$onMessageReceived);
       wx.$Kit.off(wx.$KitEvent.MESSAGE_READ_BY_PEER, this.$onMessageReadByPeer);
       wx.$Kit.off(wx.$KitEvent.MESSAGE_REVOKED, this.$onMessageRevoked);
@@ -132,7 +129,6 @@ Component({
     // 获取消息列表
     getMessageList(conversation) {
       if (!this.data.isCompleted) {
-          console.log("消息拉去时间",this.data.curLastTime)
         wx.$Kit.getMessageList({
           conversationID: conversation.conversationID,
           time: this.data.curLastTime,
@@ -189,7 +185,6 @@ Component({
 
     // 收到的消息
     $onMessageReceived(event) {
-        console.log("$onMessageReceived", event)
         const value = {
             data: [event.data]
         }
@@ -316,7 +311,6 @@ Component({
     },
     // 收到对方消息撤回事件
     $onMessageRevoked(event) {
-      console.log('$onMessageRevoked', event)
         this.setData({
             showName: '对方',
             RevokeID: event.data.messageID,
@@ -343,7 +337,7 @@ Component({
     // 消息跳转到最新
     handleJumpNewMessage() {
         wx.$Kit.setMessageRead(this.data.conversation.conversationID, this.data.conversation.userProfile.openid).then(() => {
-            console.log("设置消息已读");
+            // console.log("设置消息已读");
         });
       this.setData({
         jumpAim: this.data.messageList[this.data.messageList.length - 1].messageID,
@@ -354,7 +348,7 @@ Component({
     // 消息跳转到最近未读
     handleJumpUnreadMessage() {
         wx.$Kit.setMessageRead(this.data.conversation.conversationID, this.data.conversation.userProfile.openid).then(() => {
-            console.log("设置消息已读");
+            // console.log("设置消息已读");
         });
       if (this.data.unreadCount > 15) {
         this.getMessageList(this.data.conversation);
@@ -373,7 +367,7 @@ Component({
     // 滑动到最底部置跳转事件为false
     scrollHandler() {
         wx.$Kit.setMessageRead(this.data.conversation.conversationID, this.data.conversation.userProfile.openid).then(() => {
-            console.log("设置消息已读");
+            // console.log("设置消息已读");
         });
       this.setData({
         jumpAim: this.data.messageList[this.data.messageList.length - 1].messageID,
@@ -383,13 +377,10 @@ Component({
 
     // 展示消息时间
     messageTimeForShow(messageTime) {
-        console.log('展示消息时间', messageTime)
       const interval = 5 * 60 * 1000;
       const nowTime = Math.floor(messageTime.time / 10) * 10;
       if(this.data.messageList!=null && this.data.messageList.length > 0) {
           const lastTime = this.data.messageList[this.data.messageList.length-1].time;
-
-          console.log("lastTme", lastTime)
           if (nowTime  - lastTime > interval) {
             Object.assign(messageTime, {
               isShowTime: true,
