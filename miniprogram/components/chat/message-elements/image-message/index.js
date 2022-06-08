@@ -11,7 +11,7 @@ Component({
       observer(newVal) {
         this.setData({
           renderDom: parseImage(newVal),
-          percent: newVal.percent,
+        //   percent: newVal.percent,
         });
       },
     },

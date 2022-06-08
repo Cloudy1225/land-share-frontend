@@ -182,6 +182,21 @@ Page({
           fail: (res) => {},
           complete: (res) => {},
         })
+    },
+
+    routePlan(){
+        const that =this
+        let plugin = requirePlugin('routePlan');
+        let key = 'FL6BZ-ON76U-ELXV4-27XN6-GN72E-XAB4R';  //使用在腾讯位置服务申请的key
+        let referer = '闲置土地信息共享';   //调用插件的app的名称
+        let endPoint = JSON.stringify({  //终点
+            'latitude': that.data.landDetail.latitude,
+            'longitude':that.data.landDetail.longtitude,
+            'name':'目的土地'
+        });
+        wx.navigateTo({
+            url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
+        });
     }
     ,
     gps(){

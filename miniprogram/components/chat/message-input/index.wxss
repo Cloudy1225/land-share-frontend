@@ -3,8 +3,8 @@
     padding-bottom: 80rpx;
 }
 
-.test {
-    height: 10rpx;
+.spaceLine {
+    height: 15rpx;
 }
 
 .TUI-message-input {

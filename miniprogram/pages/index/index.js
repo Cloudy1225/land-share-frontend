@@ -133,8 +133,6 @@ Page({
 //         url: 'plugin://routePlan/index?navigation=1&key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
 //     });
 //   },
-
-
   // 发出请求，获取土地
   async getLands(){
     var submitTime = this.data.submitTime;

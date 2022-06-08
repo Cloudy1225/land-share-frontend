@@ -1,5 +1,5 @@
 <view class="TUI-message-input-container">
-<view class="test"></view>
+<view class="spaceLine"></view>
     <view class="TUI-message-input">
         <image class="TUI-icon" bindtap="switchAudio" src="{{isAudio ? '../../../images/keyboard.svg' : '../../../images/audio.svg'}}" />
         <view wx:if="{{!isAudio}}" class="TUI-message-input-main">

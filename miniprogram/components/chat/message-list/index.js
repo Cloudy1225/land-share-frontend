@@ -53,9 +53,9 @@ Component({
     checkID: '',
     selectedMessage: {},
     deleteMessage: '',
-    isRevoke: false,
-    RevokeID: '', // 撤回消息的ID用于处理对方消息展示界面
-    showName: '',
+    // isRevoke: false,
+    // RevokeID: '', // 撤回消息的ID用于处理对方消息展示界面
+    // showName: '',
     showDownJump: false,
     showUpJump: false,
     jumpAim: '',
@@ -240,11 +240,21 @@ Component({
     // 更新messagelist
     updateMessageByID(deleteMessageID) {
       const { messageList } = this.data;
-      const deletedMessageArr = messageList.filter(item => item.messageID !== deleteMessageID);
+      for(let i = messageList.length-1; i >= 0; i++) {
+          if(messageList[i].messageID === deleteMessageID) {
+            messageList[i].isRevoked = true;
+            break;
+          }
+      }
       this.setData({
-        messageList: deletedMessageArr,
-      });
-      return deletedMessageArr;
+          messageList: messageList
+      })
+      return messageList
+    //   const deletedMessageArr = messageList.filter(item => item.messageID !== deleteMessageID);
+    //   this.setData({
+    //     messageList: deletedMessageArr,
+    //   });
+    //   return deletedMessageArr;
     },
     // 删除消息
     deleteMessage() {
@@ -284,10 +294,10 @@ Component({
             wx.$Kit.revokeMessage(messageID)
             .then((imResponse) => {
                 this.updateMessageByID(imResponse.data.messageID);
-                this.setData({
-                    showName: '你',
-                    isRevoke: true
-                });
+                // this.setData({
+                //     showName: '你',
+                //     isRevoke: true
+                // });
              // 消息撤回成功
             }).catch((imError) => {
                 wx.showToast({
@@ -311,11 +321,11 @@ Component({
     },
     // 收到对方消息撤回事件
     $onMessageRevoked(event) {
-        this.setData({
-            showName: '对方',
-            RevokeID: event.data.messageID,
-            isRevoke: true,
-        });
+        // this.setData({
+        //     showName: '对方',
+        //     RevokeID: event.data.messageID,
+        //     isRevoke: true,
+        // });
         this.updateMessageByID(event.data);
     },
     // 复制消息

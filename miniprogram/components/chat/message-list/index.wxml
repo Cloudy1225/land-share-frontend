@@ -59,13 +59,13 @@
             </view>
         </view>
     </view>
-     <view wx:if="{{isRevoke}}">
+     <!-- <view wx:if="{{isRevoke}}">
         <view class="notice" bindtap="resendMessage">
             <view class="content">
                 <text class="revoke">{{showName}}撤回了一条消息</text>
             </view>
         </view>
-    </view>
+    </view> -->
 </scroll-view>
 </view>
 <view wx:if="{{showDownJump}}" bindtap="handleJumpNewMessage">

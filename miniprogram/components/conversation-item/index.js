@@ -163,10 +163,10 @@ Component({
             conversation.lastMessage.timeago = caculateTimeago(conversation.lastMessage.lastTime);
             conversation.lastMessage.messageForShow = conversation.lastMessage.messageForShow.slice(0, 15);
             this.setData({
-            showMessage: conversation.lastMessage.messageForShow,
+                showMessage: conversation.lastMessage.messageForShow,
             });
             this.setData({
-              conversation,
+                conversation,
             });
           }
       }
