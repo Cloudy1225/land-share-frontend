@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="index">
+
     <view class="search-bar">
         <view class="search-bar__form" bindtap="navigateToPage" data-page="searchPage">
             <label class="search-bar__label" wx:if="{{ !inputFocus && !inputValue }}" bindtap="onClick">
@@ -31,7 +32,10 @@
             <view>面积测量</view>
         </wux-grid>
     </wux-grids>
-
+    <wux-white-space size="default" />
+    <wux-wing-blank size="small">
+    <image src="../../images/logo.jpg" style="width: 100%;"></image>
+    </wux-wing-blank>
     <view class="title">猜你想找</view>
     <view class="panel panel_access" catchtouchmove="{{ opened ? 'noop' : '' }}">
         <view class="panel__bd">

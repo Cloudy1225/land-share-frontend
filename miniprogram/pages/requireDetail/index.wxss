@@ -116,3 +116,21 @@ border: 1px solid #ccc;
 border-radius: 16px;
 background-color: #fff;
 }
+.fixbutton{
+    height: 60px;
+    display:inline-flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: #caeff5;
+    
+}
+.icongps{
+    height: 70rpx;
+    width: 70rpx;
+    right: 12px;
+    float: right;
+    margin-top: 15px;
+    margin-left: 30px;
+}

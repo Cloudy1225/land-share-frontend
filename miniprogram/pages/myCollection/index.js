@@ -118,14 +118,14 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: async function (options) {
-        await this.getLands() // 初始时刷新土地列表
-        console.log(this.data.landDetails)
-        if(this.data.landDetails == null || this.data.landDetails.length == 0) {
-            this.setData({
-                isEmpty: true
-            })
-        }
-        console.log(this.data.isEmpty)
+        // await this.getLands() // 初始时刷新土地列表
+        // console.log(this.data.landDetails)
+        // if(this.data.landDetails == null || this.data.landDetails.length == 0) {
+        //     this.setData({
+        //         isEmpty: true
+        //     })
+        // }
+        // console.log(this.data.isEmpty)
     },
 
     /**
@@ -138,8 +138,15 @@ Page({
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {
-
+    onShow:async function () {
+        await this.getLands() // 初始时刷新土地列表
+        console.log(this.data.landDetails)
+        if(this.data.landDetails == null || this.data.landDetails.length == 0) {
+            this.setData({
+                isEmpty: true
+            })
+        }
+        console.log(this.data.isEmpty)
     },
 
     /**

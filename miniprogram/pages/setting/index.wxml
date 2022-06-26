@@ -6,22 +6,12 @@
     <wux-wing-blank size="large">
 
     <wux-white-space size="large" />
+
     <wux-cell-group >
         <wux-cell title="我的实名信息"
                     is-link hasLine
             url="/pages/realName/index"
         ></wux-cell>
-        <wux-cell title="电话" extra="18888888888"
-        hasLine
-        ></wux-cell>
-        <wux-cell title="我的地址"
-        is-link
-        hasLine
-        ></wux-cell>
-    </wux-cell-group>
-
-    <wux-white-space size="large" />
-    <wux-cell-group >
         <wux-cell title="版本号" extra="1.0.0"
         hasLine
             ></wux-cell>
