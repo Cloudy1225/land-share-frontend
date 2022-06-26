@@ -30,7 +30,7 @@ App({
     })
     this.globalData.openid = res.result;
 
-    wx.$Kit = SDK.create(this.globalData.openid, 'land-share-test');
+    wx.$Kit = SDK.create(this.globalData.openid, 'land-share');
     wx.$KitEvent = SDK.EVENT;
     wx.$KitTypes = SDK.MessageType;
     // console.log(wx.$Kit)
@@ -65,7 +65,7 @@ App({
         method: obj.method||'GET', // 按照自己的业务开发，选择对应的方法
         // dataType:'text', // 如果返回的不是json格式，需要添加此项
         header: {
-          'X-WX-SERVICE': 'land-share-test' // xxx中填入服务名称（微信云托管 - 服务管理 - 服务列表 - 服务名称）
+          'X-WX-SERVICE': 'land-share' // xxx中填入服务名称（微信云托管 - 服务管理 - 服务列表 - 服务名称）
           // 其他header参数
         },
         data: obj.data

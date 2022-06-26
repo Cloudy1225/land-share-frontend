@@ -16,20 +16,18 @@
             <wux-card title="{{landDetail.title}}" extra="{{daysago}}">
                 <view slot="body"> 
                 <view wx:for="{{tags}}" wx:key="item" class="tags" >
-                    <wux-tag color="#f{{item._id*10}}">{{item.tag}}</wux-tag>
-               
+                    <wux-tag color="#f{{item._id*10}}">{{item.tag}}</wux-tag>  
                 </view> 
                 </view>
-                
-                
+            </wux-card>   
 
-            </wux-card>        
-    <template is="list" data="{{cells: cells}}"/>
     <wux-cell-group>
-    <wux-cell title="描述">
-        {{description}}
-    </wux-cell>
-</wux-cell-group>
+        <wux-cell wx:for="{{cells}}" wx:key="index"
+         title="{{item.title}}" hasLine  extra="{{ item.text }}">
+        </wux-cell>
+        <wux-cell title="土地描述" hover-class="none">  {{description}}</wux-cell> 
+    </wux-cell-group>            
+
 </view>
 
 <view>guess you like</view>
