@@ -21,15 +21,11 @@
     <wux-cell title="描述">
         {{description}}
     </wux-cell>
-</wux-cell-group>
-    
-    <wux-button bindtap="chatwith">联系poster</wux-button>
-    <!-- <map style="width: 100%; height: 200px;" latitude="{{landDetail.latitude}}" longitude="{{landDetail.longtitude}}" markers="{{markers}}">
-	</map> -->
-   
+</wux-cell-group>   
 </view>
-
-<view>guess you like</view>
-
+<view class="fixbutton">
+<wux-icon type="ios-chatbubbles" bindtap="chat" class="icongps"> </wux-icon>
+<wux-icon type="ios-call "capture-bind:tap="phoneCall" class="icongps"> </wux-icon>
+</view>
 
 </scroll-view>

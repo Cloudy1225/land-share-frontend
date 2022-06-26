@@ -115,17 +115,6 @@ Page({
 
     ,
     async collect(){
-        if(this.data.collect){
-            const isSuccess = await this.delcollection()
-            if(isSuccess){
-                this.setData({
-                    collect: false
-                })
-                wx.showToast({
-                    title: '取消收藏',
-                })
-            }
-        }else{
             const lid = this.data.landDetail.lid;
             var src = '/collection/addMyCollection?lid='+lid;
             const res = await app.callContainer({
@@ -148,7 +137,6 @@ Page({
                 })
 
             }
-        }
     },
     async iscollected() {
         const lid = this.data.landDetail.lid;
@@ -161,15 +149,19 @@ Page({
       },
       async delcollection(){
         const lid = this.data.landDetail.lid;
-        var src = 'collection/addMyCollection?lid='+lid;
+        var src = 'collection/deleteMyCollection?lid='+lid;
         const res = await app.callContainer({
             path: src,
             method: 'GET'
           });
           if(res.code=="00000"){
-              return true;
+            this.setData({
+                collect: false
+            })
+            wx.showToast({
+                title: '取消收藏',
+            })
           }
-          return  false;
       }
       ,
     phoneCall(){

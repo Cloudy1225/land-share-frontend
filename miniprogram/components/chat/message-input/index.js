@@ -195,6 +195,7 @@ Component({
             });
             return;
           }
+          console.log("发送图片")
           const fileName = res.tempFilePaths[0].split("/").pop()
           wx.cloud.uploadFile({
             cloudPath: `chat/image/${fileName}`, // 对象存储路径，根路径直接填文件名，文件夹例子 test/文件名，不要 / 开头
